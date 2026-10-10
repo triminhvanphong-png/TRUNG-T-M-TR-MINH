@@ -1,0 +1,6 @@
+{
+  "name": "Trung Tâm Luyện Thi Đại Học Trí Minh",
+  "description": "Website chính thức Trung Tâm Luyện Thi Đại Học Trí Minh - Thành lập 1999 tại 434 Tô Ký, Đông Thạnh, TP.HCM. Chuyên luyện thi THPT, ĐGNL, ôn thi vào 10.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
