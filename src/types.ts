@@ -18,8 +18,6 @@ export interface Teacher {
   subject: string;
   degree: string;
   experience: string;
-  description: string;
-  avatarUrl: string;
 }
 
 export interface NewsArticle {

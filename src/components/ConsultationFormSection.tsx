@@ -68,7 +68,7 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
 
     try {
       const GOOGLE_APPS_SCRIPT_URL =
-        'https://script.google.com/macros/s/AKfycbybsTxGrMZu6pUq0GtbNeB5wn4YDws5ndQqQnxvnKV2_oJpwN0BO8YHKJ_g1AreC2HEWw/exec';
+        'https://script.google.com/macros/s/XXXX/exec';
 
       const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
@@ -86,9 +86,23 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
         }),
       });
 
-      const data = await response.json();
+      const responseText = await response.text();
+      let data: any = null;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error(
+          'Lỗi khi parse JSON từ Google Apps Script:',
+          'HTTP Status:',
+          response.status,
+          'Status Text:',
+          response.statusText,
+          'Nội dung trả về:',
+          responseText
+        );
+      }
 
-      if (data && data.ok === true) {
+      if (response.ok && data && data.ok === true) {
         setSuccessMessage('Cảm ơn bạn! Trung tâm sẽ liên hệ trong thời gian sớm nhất.');
         // Xóa form sau khi gửi thành công
         setFormData({
@@ -101,10 +115,23 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
           website: '',
         });
       } else {
+        console.error(
+          'Lỗi gửi form - Phản hồi không thành công:',
+          'HTTP Status:',
+          response.status,
+          'Status Text:',
+          response.statusText,
+          'Nội dung trả về:',
+          data || responseText
+        );
         setErrorMessage('Gửi chưa thành công, vui lòng gọi/Zalo 0703 672 542');
       }
-    } catch (err) {
-      console.error('Lỗi khi gửi form Google Sheets:', err);
+    } catch (err: any) {
+      console.error(
+        'Lỗi ngoại lệ mạng/fetch khi gửi form tới Google Apps Script:',
+        err?.message || err,
+        err
+      );
       setErrorMessage('Gửi chưa thành công, vui lòng gọi/Zalo 0703 672 542');
     } finally {
       setIsSubmitting(false);

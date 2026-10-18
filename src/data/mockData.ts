@@ -191,8 +191,6 @@ export const TEACHERS: Teacher[] = [
     subject: 'Môn Toán học (Lớp 12 LTĐH & ĐGNL)',
     degree: 'Thạc sĩ Toán học - Giáo viên Giỏi cấp Thành phố',
     experience: 'Hơn 24 năm kinh nghiệm luyện thi đại học',
-    description: 'Chuyên gia phân tích cấu trúc đề thi tốt nghiệp THPT và ĐGNL ĐHQG. Phương pháp hệ thống hóa sơ đồ tư duy, biến các bài toán vận dụng cao thành các bước giải mạch lạc, dễ nhớ.',
-    avatarUrl: 'https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 'gv-2',
@@ -200,8 +198,6 @@ export const TEACHERS: Teacher[] = [
     subject: 'Môn Ngữ văn (Luyện thi THPT & Tuyển sinh 10)',
     degree: 'Thạc sĩ Lý luận Văn học - Tốt nghiệp ĐH Sư Phạm TP.HCM',
     experience: 'Hơn 18 năm giảng dạy và luyện thi học sinh giỏi',
-    description: 'Được Sở GD&ĐT công nhận giáo viên giỏi nhiều năm liền. Nổi tiếng với phương pháp dạy Văn tư duy, không học vẹt, rèn kỹ năng viết đoạn nghị luận xã hội sắc bén đạt điểm tối đa.',
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 'gv-3',
@@ -209,8 +205,6 @@ export const TEACHERS: Teacher[] = [
     subject: 'Môn Tiếng Anh (Luyện thi ĐH & ĐGNL ĐHQG)',
     degree: 'Cử nhân Ngôn ngữ Anh - IELTS 8.5',
     experience: 'Hơn 14 năm kinh nghiệm chuyên luyện đề thi THPT QG',
-    description: 'Bậc thầy mẹo phân tích câu hỏi ngữ pháp, collocations và kỹ thuật Scanning/Skimming bài đọc hiểu dài. Giúp hàng trăm học sinh bứt phá từ 6 điểm lên 8.5+ điểm môn Anh.',
-    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 'gv-4',
@@ -218,8 +212,6 @@ export const TEACHERS: Teacher[] = [
     subject: 'Môn Vật lý (Lớp 10, 11, 12 LTĐH)',
     degree: 'Thạc sĩ Vật lý Lý thuyết - Cựu Giảng viên thỉnh giảng',
     experience: 'Hơn 20 năm thâm niên luyện thi Đại học',
-    description: 'Tác giả nhiều tài liệu chuyên đề Vật lý độc quyền. Phong cách giảng dạy dí dỏm, thực nghiệm trực quan, chuyên trị các bài đồ thị dao động cơ và mạch xoay chiều nâng cao.',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 'gv-5',
@@ -227,8 +219,6 @@ export const TEACHERS: Teacher[] = [
     subject: 'Môn Hóa học (Luyện thi THPT & Lớp 10-11-12)',
     degree: 'Thủ khoa Sư phạm Hóa học - Giáo viên Dạy giỏi',
     experience: 'Hơn 16 năm luyện thi các trường khối A, B Y Dược',
-    description: 'Phương pháp phân dạng bài tập este, peptit và phản ứng hữu cơ theo quy luật độc đáo. Giúp học sinh nắm chắc 8 điểm trong vòng 40 ngày ôn tập.',
-    avatarUrl: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=600&auto=format&fit=crop',
   },
   {
     id: 'gv-6',
@@ -236,8 +226,6 @@ export const TEACHERS: Teacher[] = [
     subject: 'Môn Toán Tuyển Sinh Lớp 10 & THCS',
     degree: 'Cử nhân Sư phạm Toán - Chuyên đề Toán Thực Tế TP.HCM',
     experience: 'Hơn 15 năm chuyên sâu tuyển sinh vào lớp 10',
-    description: 'Chuyên gia giải mã các bài toán thực tế trong đề tuyển sinh 10 TP.HCM. Tận tâm, sát sao, biến môn Toán thành niềm đam mê của hàng ngàn học sinh THCS.',
-    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop',
   },
 ];
 
