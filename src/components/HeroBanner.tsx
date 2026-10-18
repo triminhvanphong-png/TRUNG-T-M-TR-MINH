@@ -64,7 +64,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-200 max-w-xl mx-auto lg:mx-0">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Giáo viên giỏi Sở GD&ĐT giàu kinh nghiệm</span>
+                <span>Thầy Cô giỏi Sở GD&ĐT giàu kinh nghiệm</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -72,7 +72,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Hệ thống 2 hệ: Lớp Chuẩn & Lớp 8+ bứt phá</span>
+                <span>Hệ thống 2 hệ: Lớp Chuẩn & Lớp Ôn thi Cấp tốc</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />

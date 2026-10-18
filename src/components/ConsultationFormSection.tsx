@@ -9,14 +9,14 @@ interface ConsultationFormSectionProps {
 
 export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = ({
   initialCourse = '',
-  initialClassType = 'Lớp Chuẩn',
+  initialClassType = 'Chưa rõ – cần tư vấn',
 }) => {
   const [formData, setFormData] = useState({
     hoTen: '',
     soDienThoai: '',
     lop: 'Lớp 12',
     khoaHoc: initialCourse || 'Lớp 12 Luyện Thi Đại Học (LTĐH)',
-    heLop: initialClassType || 'Lớp Chuẩn',
+    heLop: initialClassType || 'Chưa rõ – cần tư vấn',
     ghiChu: '',
     website: '', // Honeypot field for anti-spam bot
   });
@@ -110,7 +110,7 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
           soDienThoai: '',
           lop: 'Lớp 12',
           khoaHoc: 'Lớp 12 Luyện Thi Đại Học (LTĐH)',
-          heLop: 'Lớp Chuẩn',
+          heLop: 'Chưa rõ – cần tư vấn',
           ghiChu: '',
           website: '',
         });
@@ -283,20 +283,45 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
               </div>
             </div>
 
-            {/* Hệ lớp: Lớp Chuẩn / Lớp 8+ */}
+            {/* Hệ lớp: Chưa rõ – cần tư vấn / Lớp Chuẩn / Lớp Ôn thi Cấp tốc */}
             <div className="space-y-1.5">
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                 Hệ Lớp Đăng Ký (Phân Hóa Trình Độ)
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {/* 1. Chưa rõ – cần tư vấn */}
                 <label
-                  className={`p-3.5 rounded-2xl border-2 flex items-center justify-between cursor-pointer transition ${
-                    formData.heLop === 'Lớp Chuẩn'
-                      ? 'border-blue-700 bg-blue-50/80 text-blue-950 font-bold'
+                  className={`p-3 rounded-2xl border-2 flex items-center justify-between cursor-pointer transition ${
+                    formData.heLop === 'Chưa rõ – cần tư vấn'
+                      ? 'border-slate-800 bg-slate-100/90 text-slate-900 font-bold shadow-sm'
                       : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300'
                   }`}
                 >
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="heLop"
+                      value="Chưa rõ – cần tư vấn"
+                      checked={formData.heLop === 'Chưa rõ – cần tư vấn'}
+                      onChange={(e) => setFormData({ ...formData, heLop: e.target.value })}
+                      className="text-slate-800 focus:ring-slate-700"
+                    />
+                    <div>
+                      <div className="text-xs sm:text-sm font-bold">Chưa rõ – cần tư vấn</div>
+                      <div className="text-[10px] text-slate-500">Kiểm tra đầu vào & tư vấn</div>
+                    </div>
+                  </div>
+                </label>
+
+                {/* 2. Lớp Chuẩn */}
+                <label
+                  className={`p-3 rounded-2xl border-2 flex items-center justify-between cursor-pointer transition ${
+                    formData.heLop === 'Lớp Chuẩn'
+                      ? 'border-blue-700 bg-blue-50/80 text-blue-950 font-bold shadow-sm'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
                     <input
                       type="radio"
                       name="heLop"
@@ -306,39 +331,34 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
                       className="text-blue-900 focus:ring-blue-800"
                     />
                     <div>
-                      <div className="text-xs sm:text-sm font-bold">LỚP CHUẨN</div>
-                      <div className="text-[11px] text-slate-500">Củng cố nền tảng, học chắc học đều</div>
+                      <div className="text-xs sm:text-sm font-bold">Lớp Chuẩn</div>
+                      <div className="text-[10px] text-slate-500">Củng cố nền, học chắc đều</div>
                     </div>
                   </div>
-                  <span className="text-[10px] bg-blue-200/80 text-blue-900 px-2 py-0.5 rounded font-bold">
-                    Nền Tảng
-                  </span>
                 </label>
 
+                {/* 3. Lớp Ôn thi Cấp tốc */}
                 <label
-                  className={`p-3.5 rounded-2xl border-2 flex items-center justify-between cursor-pointer transition ${
-                    formData.heLop === 'Lớp 8+'
-                      ? 'border-orange-500 bg-orange-50/80 text-orange-950 font-bold'
+                  className={`p-3 rounded-2xl border-2 flex items-center justify-between cursor-pointer transition ${
+                    formData.heLop === 'Lớp Ôn thi Cấp tốc'
+                      ? 'border-orange-500 bg-orange-50/80 text-orange-950 font-bold shadow-sm'
                       : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300'
                   }`}
                 >
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2">
                     <input
                       type="radio"
                       name="heLop"
-                      value="Lớp 8+"
-                      checked={formData.heLop === 'Lớp 8+'}
+                      value="Lớp Ôn thi Cấp tốc"
+                      checked={formData.heLop === 'Lớp Ôn thi Cấp tốc'}
                       onChange={(e) => setFormData({ ...formData, heLop: e.target.value })}
                       className="text-orange-600 focus:ring-orange-500"
                     />
                     <div>
-                      <div className="text-xs sm:text-sm font-bold">LỚP 8+ (ĐẶC BIỆT)</div>
-                      <div className="text-[11px] text-slate-500">Bứt phá điểm cao, rèn câu phân loại</div>
+                      <div className="text-xs sm:text-sm font-bold">Lớp Ôn thi Cấp tốc</div>
+                      <div className="text-[10px] text-slate-500">Hệ thống & luyện đề gấp</div>
                     </div>
                   </div>
-                  <span className="text-[10px] bg-orange-200 text-orange-900 px-2 py-0.5 rounded font-bold">
-                    Bứt Phá
-                  </span>
                 </label>
               </div>
             </div>

@@ -22,7 +22,7 @@ import { ChatbotModal } from './components/ChatbotModal';
 export default function App() {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [selectedCourseForForm, setSelectedCourseForForm] = useState<string>('');
-  const [selectedClassTypeForForm, setSelectedClassTypeForForm] = useState<string>('Lớp Chuẩn');
+  const [selectedClassTypeForForm, setSelectedClassTypeForForm] = useState<string>('Chưa rõ – cần tư vấn');
 
   const scrollToConsultationForm = () => {
     const element = document.getElementById('consultation-form');
@@ -71,7 +71,7 @@ export default function App() {
         {/* 8. Ban giảng huấn */}
         <TeachersSection />
 
-        {/* 9. Học phí & Thời khóa biểu (Hiển thị ảnh và tải ảnh lên) */}
+        {/* 9. Học phí & Ưu đãi (Không hiện con số học phí, có FAQ lịch học) */}
         <TuitionAndScheduleSection onOpenConsultForm={scrollToConsultationForm} />
 
         {/* 10. Tin tức */}

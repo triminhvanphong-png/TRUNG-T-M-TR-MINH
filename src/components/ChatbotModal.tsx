@@ -18,7 +18,7 @@ export const ChatbotModal: React.FC<ChatbotModalProps> = ({
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: `Dạ chào bạn! Thầy/Cô tư vấn Trung Tâm Luyện Thi Đại Học Trí Minh (thành lập 1999 tại 434 Tô Ký, Đông Thạnh, TP.HCM) xin chào bạn.\n\nBạn đang quan tâm đến khóa học nào (Lớp 12 LTĐH, Ôn ĐGNL ĐHQG, Tuyển sinh 9 lên 10, Hệ Lớp Chuẩn hay Lớp 8+)?`,
+      text: `Dạ chào bạn! Thầy/Cô tư vấn Trung Tâm Luyện Thi Đại Học Trí Minh (thành lập 1999 tại 434 Tô Ký, Đông Thạnh, TP.HCM) xin chào bạn.\n\nBạn đang quan tâm đến khóa học nào (Lớp 12 LTĐH, Ôn ĐGNL ĐHQG, Tuyển sinh 9 lên 10, Hệ Lớp Chuẩn hay Lớp Ôn thi Cấp tốc)?`,
       timestamp: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
@@ -28,10 +28,10 @@ export const ChatbotModal: React.FC<ChatbotModalProps> = ({
 
   const quickQuestions = [
     'Học phí các khóa học bao nhiêu?',
+    'Lịch học các môn như thế nào?',
     'Khóa Lớp 12 LTĐH cho 2K8 học thế nào?',
     'Ôn thi ĐGNL ĐHQG TP.HCM có những môn gì?',
-    'Lớp Chuẩn và Lớp 8+ khác nhau sao?',
-    'Sự kiện Thi thử ĐGNL 2027 có ưu đãi gì?',
+    'Lớp Chuẩn và Lớp Ôn thi Cấp tốc khác nhau thế nào?',
     'Địa chỉ và giờ làm việc của trung tâm?',
   ];
 
@@ -88,10 +88,14 @@ export const ChatbotModal: React.FC<ChatbotModalProps> = ({
       let replyText = '';
       if (lower.includes('học phí') || lower.includes('giá') || lower.includes('bao nhiêu tiền') || lower.includes('chi phí')) {
         replyText = 'Dạ chào bạn! Trung tâm Trí Minh có rất nhiều chính sách ưu đãi hấp dẫn như: Ưu đãi đặc biệt khi đăng ký combo 3 môn, Học viên cũ được giảm học phí, 100% tài liệu miễn phí và lệ phí thi thử được khấu trừ vào học phí. Mỗi khóa gồm 4 tuần (Toán 3 buổi/tuần; Lý, Hóa, Anh, Sinh, Văn 2 buổi/tuần). Mời bạn để lại số điện thoại tại Form Đăng ký tư vấn trên website hoặc nhắn tin Zalo 0703 672 542 để nhận bảng học phí chi tiết nhé!';
+      } else if (lower.includes('lịch học') || lower.includes('thời khóa biểu') || lower.includes('mấy buổi') || lower.includes('ngày nào')) {
+        replyText = 'Toán học 3 buổi/tuần; Lý, Hóa, Anh, Sinh, Văn mỗi môn 2 buổi/tuần. Vui lòng liên hệ hotline/Zalo 0703 672 542 để nhận lịch học cụ thể.';
+      } else if (lower.includes('lớp chuẩn') || lower.includes('cấp tốc') || lower.includes('hệ lớp')) {
+        replyText = 'Trí Minh có 2 hệ lớp:\n1. LỚP CHUẨN: Củng cố nền tảng, học trước chương trình mới, rèn kỹ năng làm bài, phương châm "Học chắc - Học đều".\n2. LỚP ÔN THI CẤP TỐC: Dành cho học sinh cần hệ thống lại kiến thức trong thời gian ngắn trước kỳ thi; tập trung các dạng bài trọng tâm, luyện đề và chữa đề sát cấu trúc đề thi.';
       } else if (lower.includes('địa chỉ') || lower.includes('ở đâu')) {
         replyText = 'Trung Tâm Luyện Thi Đại Học Trí Minh tọa lạc tại 434 đường Tô Ký, xã Đông Thạnh, TP.HCM. Lưu ý: Trung tâm chỉ có 1 CƠ SỞ DUY NHẤT để đảm bảo chất lượng giảng dạy tốt nhất!';
       } else {
-        replyText = 'Dạ cảm ơn bạn đã quan tâm. Để nhận thông tin chi tiết và xếp lịch kiểm tra trình độ đầu vào, bạn vui lòng gọi ngay Hotline 0703 672 542 hoặc nhấn nút "Đăng Ký Tư Vấn" trên trang nhé!';
+        replyText = 'Dạ cảm ơn bạn đã quan tâm. Để nhận thông tin chi tiết và xếp lịch kiểm tra trình độ đầu vào cùng Thầy Cô, bạn vui lòng gọi ngay Hotline 0703 672 542 hoặc nhấn nút "Đăng Ký Tư Vấn" trên trang nhé!';
       }
 
       setMessages((prev) => [

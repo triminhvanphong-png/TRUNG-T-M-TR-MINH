@@ -23,7 +23,7 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({ onOpenConsultFor
             Các Khóa Học Trọng Điểm Tại Trí Minh
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Chương trình thiết kế chuyên sâu, bám sát ma trận đề thi chuẩn của Bộ GD&ĐT và ĐHQG TP.HCM, kết hợp 2 hệ đào tạo: Lớp Chuẩn & Lớp 8+ bứt phá.
+            Chương trình thiết kế chuyên sâu, bám sát ma trận đề thi chuẩn của Bộ GD&ĐT và ĐHQG TP.HCM, kết hợp 2 hệ đào tạo: Lớp Chuẩn & Lớp Ôn thi Cấp tốc.
           </p>
         </div>
 

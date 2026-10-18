@@ -62,9 +62,13 @@ CÁC KHÓA HỌC:
 
 HAI HỆ LỚP:
 - LỚP CHUẨN: ôn tập củng cố nền tảng, học trước chương trình mới, rèn kỹ năng làm bài, học chắc học đều.
-- LỚP 8+: cho học sinh khá–giỏi muốn bứt phá, nâng cao tư duy vận dụng, rèn phản xạ, chuẩn bị cho kỳ thi quan trọng.
+- LỚP ÔN THI CẤP TỐC: dành cho học sinh cần hệ thống lại kiến thức trong thời gian ngắn trước kỳ thi; tập trung các dạng bài trọng tâm, luyện đề và chữa đề sát cấu trúc đề thi.
 
-SỰ KIỆN: "Thi thử ĐGNL 2027" – nhận phiếu phân tích kết quả, tặng sổ tay "Chiến lược chinh phục ĐGNL 2027", chữa đề Toán–Văn–Anh, 100% lệ phí thi thử trừ vào học phí, ưu đãi đến 20%.
+SỰ KIỆN: "Thi thử ĐGNL 2027" – nhận phiếu phân tích kết quả, tặng sổ tay "Chiến lược chinh phục ĐGNL 2027", chữa đề Toán–Văn–Anh cùng Thầy Cô giỏi, 100% lệ phí thi thử trừ vào học phí, ưu đãi đến 20%.
+
+QUY TẮC BẮT BUỘC VỀ LỊCH HỌC VÀ THỜI KHÓA BIỂU:
+- Khi được hỏi về lịch học hoặc thời khóa biểu, trả lời:
+  "Toán học 3 buổi/tuần; Lý, Hóa, Anh, Sinh, Văn mỗi môn 2 buổi/tuần. Vui lòng liên hệ hotline/Zalo 0703 672 542 để nhận lịch học cụ thể."
 
 QUY TẮC BẮT BUỘC VỀ HỌC PHÍ:
 - Chatbot KHÔNG BIẾT và KHÔNG ĐƯỢC ĐOÁN bất kỳ con số học phí nào. Tuyệt đối không đưa ra bất kỳ con số học phí hay giá tiền nào.
@@ -72,7 +76,7 @@ QUY TẮC BẮT BUỘC VỀ HỌC PHÍ:
   "Trung tâm có rất nhiều chính sách ưu đãi hấp dẫn như: Ưu đãi đặc biệt khi đăng ký combo 3 môn, Học viên cũ được giảm học phí, Tài liệu học tập được phát miễn phí, và Lệ phí thi thử được khấu trừ 100% vào học phí.
   Mỗi khóa học kéo dài 4 tuần (tương đương 1 tháng): Toán học 3 buổi/tuần; các môn Lý, Hóa, Anh, Sinh, Văn mỗi môn 2 buổi/tuần.
   Mời Quý Phụ huynh / Học viên để lại số điện thoại trên Form Đăng ký tư vấn của website hoặc nhắn tin Zalo 0703 672 542 để nhận bảng học phí chi tiết và áp dụng ưu đãi tốt nhất ạ!"
-- Văn phong: Chuẩn mực sư phạm, ân cần, nhiệt tình, xưng "Trí Minh" hoặc "Thầy/Cô Trí Minh" và gọi người hỏi là "em" hoặc "Quý Phụ huynh".`;
+- Xưng hô: Chuẩn mực sư phạm, ân cần, nhiệt tình, xưng "Trí Minh" hoặc "Thầy Cô Trí Minh" và gọi người hỏi là "em" hoặc "Quý Phụ huynh". Luôn dùng từ "Thầy Cô" thay cho giáo viên hay giảng viên.`;
 
 // Chatbot API endpoint
 app.post('/api/chat', async (req, res) => {
@@ -132,11 +136,13 @@ app.post('/api/chat', async (req, res) => {
   } else if (lower.includes('đgnl') || lower.includes('đánh giá năng lực')) {
     fallbackReply = 'Khóa Ôn thi ĐGNL ĐHQG TP.HCM tại Trí Minh rèn luyện toàn diện Toán – Văn – Anh, tư duy logic, phân tích dữ liệu cùng bộ đề thi thử độc quyền chuẩn cấu trúc ĐHQG. Ngoài ra, Trí Minh đang có sự kiện "Thi thử ĐGNL 2027" với ưu đãi học phí lên tới 20% và tặng sổ tay chiến lược!';
   } else if (lower.includes('lớp 12') || lower.includes('luyện thi đại học') || lower.includes('2k8') || lower.includes('tốt nghiệp')) {
-    fallbackReply = 'Khóa Lớp 12 LTĐH dành cho học sinh 2K8 và thí sinh tự do, bám sát cấu trúc đề thi tốt nghiệp THPT, thi thử định kỳ và rèn chiến thuật làm bài tối ưu. Có 2 hệ lớp: Lớp Chuẩn (học chắc vững nền) và Lớp 8+ (bứt phá điểm cao). Bạn có thể đăng ký ngay tại form tư vấn trên trang!';
+    fallbackReply = 'Khóa Lớp 12 LTĐH dành cho học sinh 2K8 và thí sinh tự do, bám sát cấu trúc đề thi tốt nghiệp THPT, thi thử định kỳ và rèn chiến thuật làm bài tối ưu. Có 2 hệ lớp: Lớp Chuẩn (học chắc vững nền) và Lớp Ôn thi Cấp tốc (hệ thống kiến thức, luyện đề trọng tâm). Bạn có thể đăng ký ngay tại form tư vấn trên trang!';
   } else if (lower.includes('lớp 9') || lower.includes('9 lên 10') || lower.includes('tuyển sinh 10')) {
     fallbackReply = 'Khóa Ôn thi 9 lên 10 tại Trí Minh bám sát cấu trúc đề tuyển sinh lớp 10 TP.HCM các năm, ôn tập 3 môn Toán – Văn – Anh và định hướng chọn trường THPT phù hợp nhất với năng lực học sinh.';
-  } else if (lower.includes('lớp chuẩn') || lower.includes('lớp 8+')) {
-    fallbackReply = 'Trí Minh có 2 hệ lớp:\n1. LỚP CHUẨN: Củng cố nền tảng, học trước chương trình mới, rèn kỹ năng làm bài, phương châm "Học chắc - Học đều".\n2. LỚP 8+: Dành cho học sinh khá - giỏi muốn bứt phá điểm số, rèn tư duy vận dụng cao và giải nhanh câu hỏi phân loại.';
+  } else if (lower.includes('lịch học') || lower.includes('thời khóa biểu') || lower.includes('mấy buổi') || lower.includes('buổi học')) {
+    fallbackReply = 'Toán học 3 buổi/tuần; Lý, Hóa, Anh, Sinh, Văn mỗi môn 2 buổi/tuần. Vui lòng liên hệ hotline/Zalo 0703 672 542 để nhận lịch học cụ thể.';
+  } else if (lower.includes('lớp chuẩn') || lower.includes('cấp tốc') || lower.includes('hệ lớp')) {
+    fallbackReply = 'Trí Minh có 2 hệ lớp:\n1. LỚP CHUẨN: Củng cố nền tảng, học trước chương trình mới, rèn kỹ năng làm bài, phương châm "Học chắc - Học đều".\n2. LỚP ÔN THI CẤP TỐC: Dành cho học sinh cần hệ thống lại kiến thức trong thời gian ngắn trước kỳ thi; tập trung các dạng bài trọng tâm, luyện đề và chữa đề sát cấu trúc đề thi.';
   } else {
     fallbackReply = 'Dạ chào bạn! Trung Tâm Luyện Thi Đại Học Trí Minh (thành lập 1999 tại 434 Tô Ký, Đông Thạnh, TP.HCM) chuyên luyện thi THPT, ĐGNL ĐHQG TP.HCM, tuyển sinh 9 lên 10 và các lớp THCS/THPT. Bạn quan tâm đến khóa học nào hay cần thông tin gì, Trí Minh luôn sẵn lòng hỗ trợ hoặc bạn gọi ngay Hotline 0703 672 542 nhé!';
   }

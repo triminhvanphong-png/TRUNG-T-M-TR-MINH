@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Clock, Calendar, Gift, CheckCircle2, MessageCircle, PhoneCall, Upload, ZoomIn, FileText, Sparkles, Layers, ShieldCheck, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { Clock, Gift, CheckCircle2, MessageCircle, PhoneCall, FileText, Sparkles, HelpCircle, Phone } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
 
 interface TuitionAndScheduleSectionProps {
@@ -7,22 +7,6 @@ interface TuitionAndScheduleSectionProps {
 }
 
 export const TuitionAndScheduleSection: React.FC<TuitionAndScheduleSectionProps> = ({ onOpenConsultForm }) => {
-  const [scheduleImg, setScheduleImg] = useState<string | null>(null);
-  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
-
-  const handleUploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setScheduleImg(event.target.result as string);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const highlights = [
     {
       title: 'Ưu Đãi Đặc Biệt Khi Đăng Ký Combo 3 Môn',
@@ -47,6 +31,21 @@ export const TuitionAndScheduleSection: React.FC<TuitionAndScheduleSectionProps>
       desc: '100% lệ phí tham gia các kỳ thi thử tại Trí Minh (như Thi thử ĐGNL 2027) được khấu trừ trực tiếp vào học phí khi đăng ký khóa học.',
       icon: <CheckCircle2 className="w-5 h-5 text-emerald-500" />,
       bg: 'bg-emerald-50/70 border-emerald-200',
+    },
+  ];
+
+  const faqs = [
+    {
+      question: 'Lịch học các môn tại Trí Minh được sắp xếp như thế nào?',
+      answer: 'Toán học 3 buổi/tuần; Lý, Hóa, Anh, Sinh, Văn mỗi môn 2 buổi/tuần. Vui lòng liên hệ hotline/Zalo 0703 672 542 để nhận lịch học cụ thể.',
+    },
+    {
+      question: 'Làm thế nào để nhận bảng học phí chi tiết và các mức ưu đãi?',
+      answer: 'Quý Phụ huynh và Học viên có thể nhấn nút "Nhận bảng học phí qua Zalo" hoặc để lại số điện thoại tại form bên dưới. Phòng Đào tạo Trí Minh sẽ liên hệ tư vấn lộ trình và gửi biểu phí chi tiết kèm các chương trình ưu đãi (combo 3 môn, học viên cũ).',
+    },
+    {
+      question: 'Hệ Lớp Chuẩn và Lớp Ôn thi Cấp tốc khác nhau như thế nào?',
+      answer: 'Lớp Chuẩn củng cố kiến thức nền tảng vững chắc, học chắc học đều. Lớp Ôn thi Cấp tốc dành cho học sinh cần hệ thống lại kiến thức trong thời gian ngắn trước kỳ thi; tập trung các dạng bài trọng tâm, luyện đề và chữa đề sát cấu trúc đề thi.',
     },
   ];
 
@@ -161,144 +160,56 @@ export const TuitionAndScheduleSection: React.FC<TuitionAndScheduleSectionProps>
           </p>
         </div>
 
-        {/* Schedule Image Display Area (Bên dưới là khu vực hiển thị ảnh thời khóa biểu từng lớp) */}
-        <div className="max-w-5xl mx-auto pt-6 border-t border-slate-200">
-          <div className="bg-slate-50 rounded-3xl border-2 border-dashed border-slate-300 p-6 sm:p-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        {/* FAQ Area: Câu Hỏi Thường Gặp Về Lịch Học & Học Phí */}
+        <div className="max-w-4xl mx-auto pt-6 border-t border-slate-200">
+          <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6">
+            <div className="flex items-center gap-2.5">
+              <div className="p-2 rounded-xl bg-blue-100 text-blue-900">
+                <HelpCircle className="w-5 h-5 text-blue-800" />
+              </div>
               <div>
-                <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-1">
-                  LỊCH HỌC TẠI TRUNG TÂM
-                </span>
-                <h3 className="font-black text-slate-900 text-xl sm:text-2xl">
-                  Thời Khóa Biểu Từng Lớp Học
+                <h3 className="font-extrabold text-slate-900 text-lg sm:text-xl">
+                  Câu Hỏi Thường Gặp (FAQ) Về Lịch Học & Học Phí
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                  Lịch học các khối Lớp 8 • 9 • 10 • 11 • 12 LTĐH & Ôn thi ĐGNL ĐHQG TP.HCM.
+                <p className="text-xs text-slate-500">
+                  Giải đáp nhanh các thắc mắc phổ biến của Quý Phụ huynh và Học sinh
                 </p>
               </div>
-
-              {/* Upload image button */}
-              <label className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs sm:text-sm font-bold transition cursor-pointer shadow-md shrink-0">
-                <Upload className="w-4 h-4" />
-                <span>Tải ảnh thời khóa biểu lên</span>
-                <input
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleUploadImage}
-                />
-              </label>
             </div>
 
-            {/* Display Box */}
-            <div className="relative min-h-[380px] rounded-2xl bg-white border border-slate-200 overflow-hidden flex items-center justify-center p-4">
-              {scheduleImg ? (
-                <div className="w-full flex items-center justify-center">
-                  <img
-                    src={scheduleImg}
-                    alt="Thời khóa biểu Trí Minh"
-                    className="w-full h-auto object-contain max-h-[700px] rounded-xl"
-                  />
-                  <button
-                    onClick={() => setFullscreenImage(scheduleImg)}
-                    className="absolute bottom-4 right-4 p-2.5 rounded-xl bg-slate-900/80 hover:bg-orange-600 text-white shadow transition cursor-pointer"
-                    title="Xem phóng to thời khóa biểu"
-                  >
-                    <ZoomIn className="w-5 h-5" />
-                  </button>
+            <div className="space-y-4">
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2"
+                >
+                  <h4 className="text-sm sm:text-base font-bold text-blue-950 flex items-start gap-2">
+                    <span className="w-5 h-5 rounded-full bg-orange-500 text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
+                      Q
+                    </span>
+                    <span>{faq.question}</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-700 pl-7 leading-relaxed font-medium">
+                    {faq.answer}
+                  </p>
                 </div>
-              ) : (
-                <div className="w-full max-w-4xl py-6 space-y-6 text-center">
-                  <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-50 text-blue-900 flex items-center justify-center border border-blue-100">
-                    <Calendar className="w-8 h-8 text-blue-800" />
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-slate-800 text-base">
-                      Khu Vực Hiển Thị Ảnh Thời Khóa Biểu Chi Tiết Từng Lớp
-                    </h4>
-                    <p className="text-xs text-slate-500 max-w-lg mx-auto">
-                      Quý trung tâm có thể nhấp vào nút <strong>"Tải ảnh thời khóa biểu lên"</strong> ở góc phải trên để cập nhật ảnh lịch học chính thức mới nhất.
-                    </p>
-                  </div>
+              ))}
+            </div>
 
-                  {/* Clean Timetable Overview Table (NO TUITION NUMBERS) */}
-                  <div className="overflow-x-auto text-left">
-                    <table className="w-full text-xs text-slate-700 border-collapse border border-slate-200 rounded-xl overflow-hidden">
-                      <thead>
-                        <tr className="bg-blue-950 text-white">
-                          <th className="p-3 border border-blue-900">Khối Lớp</th>
-                          <th className="p-3 border border-blue-900">Môn Học</th>
-                          <th className="p-3 border border-blue-900">Các Ngày Học</th>
-                          <th className="p-3 border border-blue-900">Khung Giờ</th>
-                          <th className="p-3 border border-blue-900">Hệ Lớp</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-slate-200">
-                        <tr className="hover:bg-slate-50">
-                          <td className="p-3 font-bold text-blue-950 border border-slate-200">Lớp 12 LTĐH (2K8)</td>
-                          <td className="p-3 border border-slate-200">Toán (3 buổi) • Lý • Hóa • Văn • Anh (2 buổi/môn)</td>
-                          <td className="p-3 border border-slate-200">Thứ 2 - 4 - 6 hoặc Thứ 3 - 5 - 7</td>
-                          <td className="p-3 border border-slate-200">18:00 – 21:00</td>
-                          <td className="p-3 border border-slate-200"><span className="px-2 py-0.5 rounded bg-orange-100 text-orange-700 font-bold">Lớp Chuẩn / Lớp 8+</span></td>
-                        </tr>
-                        <tr className="hover:bg-slate-50 bg-slate-50/50">
-                          <td className="p-3 font-bold text-blue-950 border border-slate-200">Ôn Thi ĐGNL ĐHQG</td>
-                          <td className="p-3 border border-slate-200">Toán - Văn - Anh & Tư duy logic</td>
-                          <td className="p-3 border border-slate-200">Tối Thứ 7 & Cả Ngày Chủ Nhật</td>
-                          <td className="p-3 border border-slate-200">07:30 – 11:00 & 16:30 – 20:00</td>
-                          <td className="p-3 border border-slate-200"><span className="px-2 py-0.5 rounded bg-blue-100 text-blue-700 font-bold">Chuyên Sâu ĐGNL</span></td>
-                        </tr>
-                        <tr className="hover:bg-slate-50">
-                          <td className="p-3 font-bold text-blue-950 border border-slate-200">Lớp 9 Tuyển Sinh 10</td>
-                          <td className="p-3 border border-slate-200">Toán (3 buổi) • Ngữ Văn (2 buổi) • Tiếng Anh (2 buổi)</td>
-                          <td className="p-3 border border-slate-200">Thứ 2 - 4 - 6 hoặc Thứ 3 - 5 - 7</td>
-                          <td className="p-3 border border-slate-200">17:45 – 20:45</td>
-                          <td className="p-3 border border-slate-200"><span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 font-bold">Lớp Chuẩn / Lớp 8+</span></td>
-                        </tr>
-                        <tr className="hover:bg-slate-50 bg-slate-50/50">
-                          <td className="p-3 font-bold text-blue-950 border border-slate-200">Lớp 10 & 11 (GDPT 2018)</td>
-                          <td className="p-3 border border-slate-200">Toán (3 buổi) • Lý • Hóa • Văn • Anh (2 buổi/môn)</td>
-                          <td className="p-3 border border-slate-200">Các buổi tối trong tuần</td>
-                          <td className="p-3 border border-slate-200">17:45 – 20:45</td>
-                          <td className="p-3 border border-slate-200"><span className="px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-bold">Nền Tảng / 8+</span></td>
-                        </tr>
-                        <tr className="hover:bg-slate-50">
-                          <td className="p-3 font-bold text-blue-950 border border-slate-200">Lớp 6, 7, 8 THCS</td>
-                          <td className="p-3 border border-slate-200">Toán (3 buổi) • Ngữ Văn • Tiếng Anh (2 buổi/môn)</td>
-                          <td className="p-3 border border-slate-200">Thứ 3 - 5 - 7 & Cuối tuần</td>
-                          <td className="p-3 border border-slate-200">17:30 – 19:30</td>
-                          <td className="p-3 border border-slate-200"><span className="px-2 py-0.5 rounded bg-purple-100 text-purple-700 font-bold">Củng Cố Gốc</span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
+            <div className="p-4 rounded-2xl bg-orange-50/70 border border-orange-200/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <div className="text-xs text-slate-700">
+                Cần xếp lịch học thử hoặc nhận tư vấn trực tiếp từ Thầy Cô?
+              </div>
+              <a
+                href={`tel:${CENTER_INFO.hotline.replace(/\s+/g, '')}`}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition shadow-sm shrink-0"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Hotline: {CENTER_INFO.hotline}</span>
+              </a>
             </div>
           </div>
         </div>
-
-        {/* Lightbox for zooming schedule image */}
-        {fullscreenImage && (
-          <div
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
-            onClick={() => setFullscreenImage(null)}
-          >
-            <div className="relative max-w-5xl max-h-[90vh]">
-              <img
-                src={fullscreenImage}
-                alt="Thời khóa biểu phóng to"
-                className="max-w-full max-h-[90vh] object-contain rounded-xl"
-              />
-              <button
-                onClick={() => setFullscreenImage(null)}
-                className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-white/20 text-white font-bold text-xs hover:bg-white/40"
-              >
-                Đóng [ESC]
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

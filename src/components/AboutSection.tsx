@@ -13,8 +13,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm })
       desc: 'Chuyên luyện thi đại học, kỳ thi Đánh giá năng lực (ĐGNL) ĐHQG TP.HCM, ôn thi tuyển sinh lớp 10 và bồi dưỡng các khối lớp từ 6 đến 12 theo chuẩn GDPT mới.',
     },
     {
-      title: 'Đội ngũ giáo viên giàu kinh nghiệm',
-      desc: 'Nhiều thầy cô đạt danh hiệu Giáo viên Giỏi được Sở GD&ĐT TP.HCM công nhận, thạc sĩ đầu ngành, tận tụy và thấu hiểu tâm lý học sinh.',
+      title: 'Đội ngũ Thầy Cô giàu kinh nghiệm',
+      desc: 'Nhiều Thầy Cô được Sở GD&ĐT TP.HCM công nhận danh hiệu dạy giỏi, thạc sĩ đầu ngành, tận tụy và thấu hiểu tâm lý học sinh.',
     },
     {
       title: 'Phương pháp giảng dạy ưu việt',

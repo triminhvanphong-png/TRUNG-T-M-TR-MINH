@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal, onOpenChatbo
     { label: 'Trang chủ', href: '#home' },
     { label: 'Giới thiệu', href: '#about' },
     { label: 'Khóa học', href: '#courses' },
-    { label: 'Hệ Lớp Chuẩn & 8+', href: '#class-types' },
+    { label: 'Lớp Chuẩn & Cấp Tốc', href: '#class-types' },
     { label: 'Ban giảng huấn', href: '#teachers' },
     { label: 'Học phí & Ưu đãi', href: '#tuition-schedule' },
     { label: 'Tin tức', href: '#news' },

@@ -21,7 +21,7 @@ export const SpecialEventSection: React.FC<SpecialEventSectionProps> = ({ onRegi
     {
       icon: <BookMarked className="w-5 h-5 text-emerald-400" />,
       title: 'Buổi Chữa Đề Trực Tiếp 3 Môn',
-      desc: 'Tham gia buổi giải mã chi tiết toàn bộ đề thi Toán – Văn – Anh cùng các thầy cô giỏi, chỉ rõ bẫy đề thi.',
+      desc: 'Tham gia buổi giải mã chi tiết toàn bộ đề thi Toán – Văn – Anh cùng các Thầy Cô giỏi, chỉ rõ bẫy đề thi.',
     },
     {
       icon: <Percent className="w-5 h-5 text-sky-400" />,

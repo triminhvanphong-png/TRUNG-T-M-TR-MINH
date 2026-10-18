@@ -27,7 +27,7 @@ const DANH_SACH_BAN_LANH_DAO: Array<{
   },
 ];
 
-// Dữ liệu giáo viên các bộ môn (thầy Nghĩa đã chuyển lên Ban lãnh đạo, không lặp lại ở nhóm Toán)
+// Dữ liệu Thầy Cô các bộ môn (thầy Nghĩa đã chuyển lên Ban lãnh đạo, không lặp lại ở nhóm Toán)
 const DANH_SACH_GIAO_VIEN: Array<{
   hoTen: string;
   monHoc: 'Toán' | 'Lý' | 'Hóa' | 'Sinh' | 'Anh' | 'Văn';
@@ -167,7 +167,7 @@ export const TeachersSection: React.FC = () => {
             Ban Giảng Huấn Trung Tâm Trí Minh
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Hội tụ các thầy cô giàu kinh nghiệm, nguyên tổ trưởng bộ môn THPT uy tín, cử nhân và thạc sĩ Sư phạm TP.HCM với tâm huyết đồng hành cùng các thế hệ học sinh.
+            Hội tụ các Thầy Cô giàu kinh nghiệm, nguyên tổ trưởng bộ môn THPT uy tín, cử nhân và thạc sĩ Sư phạm TP.HCM với tâm huyết đồng hành cùng các thế hệ học sinh.
           </p>
         </div>
 
@@ -251,7 +251,7 @@ export const TeachersSection: React.FC = () => {
         {/* Danh sách các nhóm bộ môn: Toán, Lý, Hóa, Sinh, Anh, Văn */}
         <div className="space-y-14">
           {CAC_MON_HOC.map((mon) => {
-            // Lấy danh sách giáo viên của môn này
+            // Lấy danh sách Thầy Cô của môn này
             const danhSachMon = DANH_SACH_GIAO_VIEN.filter((gv) => gv.monHoc === mon.key);
 
             if (danhSachMon.length === 0) return null;
