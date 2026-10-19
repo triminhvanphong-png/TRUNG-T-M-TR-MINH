@@ -9,11 +9,13 @@ import { HeroBanner } from './components/HeroBanner';
 import { StatsSection } from './components/StatsSection';
 import { AboutSection } from './components/AboutSection';
 import { CoursesSection } from './components/CoursesSection';
+import { GoldenBoardSection } from './components/GoldenBoardSection';
 import { ClassComparisonSection } from './components/ClassComparisonSection';
 import { SpecialEventSection } from './components/SpecialEventSection';
 import { TeachersSection } from './components/TeachersSection';
 import { TuitionAndScheduleSection } from './components/TuitionAndScheduleSection';
 import { NewsSection } from './components/NewsSection';
+import { LearningEnvironmentSection } from './components/LearningEnvironmentSection';
 import { ConsultationFormSection } from './components/ConsultationFormSection';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
@@ -62,6 +64,9 @@ export default function App() {
         {/* 5. Khóa học (Dạng thẻ, mỗi thẻ có popup chi tiết) */}
         <CoursesSection onOpenConsultFormWithCourse={handleSelectCourse} />
 
+        {/* 5.1 BẢNG VÀNG 2026 – HỌC VIÊN ĐẬU ĐẠI HỌC */}
+        <GoldenBoardSection onOpenConsultForm={scrollToConsultationForm} />
+
         {/* 6. Hai hệ lớp (So sánh 2 cột) */}
         <ClassComparisonSection onSelectClassType={handleSelectClassType} />
 
@@ -76,6 +81,9 @@ export default function App() {
 
         {/* 10. Tin tức */}
         <NewsSection onOpenConsultForm={scrollToConsultationForm} />
+
+        {/* 10.1 Không gian học tập (lưới mosaic + lightbox) */}
+        <LearningEnvironmentSection />
 
         {/* 11. Form đăng ký tư vấn */}
         <ConsultationFormSection

@@ -1,4 +1,5 @@
 import { Course, Teacher, NewsArticle } from '../types';
+import { IMAGES } from '../constants/images';
 
 export const CENTER_INFO = {
   name: 'TRUNG TÂM LUYỆN THI ĐẠI HỌC TRÍ MINH',
@@ -214,7 +215,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     category: 'Sự Kiện Nổi Bật',
     date: '10/10/2026',
     summary: 'Kỳ thi thử ĐGNL 2027 tại Trí Minh mang đến trải nghiệm áp lực phòng thi thật, kèm phiếu phân tích kết quả chuyên sâu và sổ tay chiến lược độc quyền.',
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop',
+    imageUrl: IMAGES.dgnl,
     tags: ['ĐGNL 2027', 'Thi Thử', 'ĐHQG TP.HCM'],
     content: [
       'Kỳ thi Đánh giá năng lực (ĐGNL) ĐHQG TP.HCM tiếp tục là phương thức tuyển sinh chủ lực của hơn 100 trường đại học, cao đẳng trên cả nước.',
@@ -233,7 +234,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     category: 'Tư Vấn Tuyển Sinh',
     date: '05/10/2026',
     summary: 'Nhiều trường đại học top đầu siết chặt chỉ tiêu xét học bạ, chuyển trọng tâm sang điểm thi tốt nghiệp THPT và kết quả kỳ thi Đánh giá năng lực.',
-    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop',
+    imageUrl: IMAGES.banner,
     tags: ['Tuyển Sinh Đại Học', 'Học Bạ', 'Xu Hướng 2026-2027'],
     content: [
       'Trong mùa tuyển sinh gần đây, hàng loạt trường đại học lớn như ĐHQG TP.HCM, ĐH Kinh tế TP.HCM (UEH), ĐH Sư phạm Kỹ thuật, ĐH Y Dược... đã giảm mạnh tỷ lệ chỉ tiêu xét bằng học bạ THPT.',
@@ -248,7 +249,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     category: 'Luyện Thi Lớp 10',
     date: '28/09/2026',
     summary: 'Phân tích cấu trúc đề tuyển sinh lớp 10 TP.HCM các năm và giải pháp phân bổ thời gian hợp lý để chắc suất vào trường THPT công lập mong muốn.',
-    imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop',
+    imageUrl: IMAGES.lop9len10,
     tags: ['Lớp 9 Lên 10', 'Tuyển Sinh 10 TP.HCM', 'Toán - Văn - Anh'],
     content: [
       'Kỳ thi tuyển sinh lớp 10 tại TP.HCM luôn được đánh giá là một trong những kỳ thi có tính cạnh tranh khốc liệt nhất.',
@@ -264,7 +265,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     category: 'Kinh Nghiệm Học Tập',
     date: '15/09/2026',
     summary: 'Giải pháp tối ưu cho học sinh mất gốc hoặc cần bứt phá điểm số trong giai đoạn nước rút với phương pháp học tập trọng tâm, rút gọn lý thuyết.',
-    imageUrl: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop',
+    imageUrl: IMAGES.giangBai,
     tags: ['Cấp Tốc', 'Lấy Gốc', 'Mẹo Thi Cử'],
     content: [
       'Nhiều học sinh rơi vào tình trạng hoang mang khi thời gian thi đến gần nhưng kiến thức còn chắp vá, giải đề thường xuyên bị sai ở các câu cơ bản.',
@@ -279,7 +280,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     category: 'Thông Tin GD&ĐT',
     date: '01/09/2026',
     summary: 'Cập nhật toàn diện các điểm mới trong đề thi tốt nghiệp THPT theo Chương trình GDPT 2018 và phương thức xét tuyển các trường đại học năm 2026.',
-    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop',
+    imageUrl: IMAGES.lop12,
     tags: ['Lớp 12', 'GDPT 2018', 'Kỳ Thi THPT 2026'],
     content: [
       'Năm 2026 đánh dấu năm thứ hai lứa học sinh hoàn thành chương trình GDPT 2018 bước vào kỳ thi Tốt nghiệp THPT với định dạng cấu trúc đề thi mới.',

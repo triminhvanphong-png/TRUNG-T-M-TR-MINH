@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Calendar, Tag, ArrowRight, Share2, Bookmark } from 'lucide-react';
 import { NewsArticle } from '../types';
+import { handleImageErrorToNavy } from '../constants/images';
 
 interface NewsDetailModalProps {
   article: NewsArticle | null;
@@ -18,11 +19,14 @@ export const NewsDetailModal: React.FC<NewsDetailModalProps> = ({ article, onClo
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Image */}
-        <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-900 shrink-0">
+        <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-[#0B1B3D] shrink-0">
           <img
             src={article.imageUrl}
             alt={article.title}
+            loading="lazy"
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
+            onError={handleImageErrorToNavy}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 

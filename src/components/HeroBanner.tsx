@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, ArrowRight, Award, ShieldCheck, Sparkles, BookOpen, CheckCircle2 } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
+import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 interface HeroBannerProps {
   onOpenConsultForm: () => void;
@@ -8,11 +9,22 @@ interface HeroBannerProps {
 
 export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => {
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-blue-950 via-slate-900 to-blue-950 text-white overflow-hidden">
-      {/* Decorative background grid and blurs */}
-      <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#0B1B3D] text-white overflow-hidden">
+      {/* 1. Background Image: banner.jpg (Không lazy-load) */}
+      <img
+        src={IMAGES.banner}
+        alt="Lớp luyện đề đông học viên tại trung tâm Trí Minh"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        referrerPolicy="no-referrer"
+        onError={handleImageErrorToNavy}
+      />
+      {/* Phủ gradient xanh đậm mờ khoảng 75% ở bên trái nhạt dần sang phải để chữ trắng đọc rõ */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3D]/95 via-[#0B1B3D]/80 to-[#0B1B3D]/40 z-0 pointer-events-none" />
+
+      {/* Decorative background grid and subtle blurs */}
+      <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none z-0" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

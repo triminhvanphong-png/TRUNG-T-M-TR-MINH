@@ -3,6 +3,7 @@ import { Calendar, ArrowRight, Tag, BookOpen, ChevronRight } from 'lucide-react'
 import { NEWS_ARTICLES } from '../data/mockData';
 import { NewsArticle } from '../types';
 import { NewsDetailModal } from './NewsDetailModal';
+import { handleImageErrorToNavy } from '../constants/images';
 
 interface NewsSectionProps {
   onOpenConsultForm: () => void;
@@ -38,11 +39,14 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ onOpenConsultForm }) =
               onClick={() => setSelectedArticle(featuredArticle)}
               className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group flex flex-col h-full"
             >
-              <div className="relative h-72 sm:h-84 w-full overflow-hidden bg-slate-900">
+              <div className="relative h-72 sm:h-84 w-full overflow-hidden bg-[#0B1B3D]">
                 <img
                   src={featuredArticle.imageUrl}
                   alt={featuredArticle.title}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={handleImageErrorToNavy}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
@@ -84,11 +88,14 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ onOpenConsultForm }) =
                 onClick={() => setSelectedArticle(article)}
                 className="bg-white rounded-2xl border border-slate-200 p-4 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer flex gap-4 group items-center"
               >
-                <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-slate-100 relative">
+                <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-[#0B1B3D] relative">
                   <img
                     src={article.imageUrl}
                     alt={article.title}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={handleImageErrorToNavy}
                   />
                 </div>
                 <div className="flex-1 min-w-0 space-y-1">

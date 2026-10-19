@@ -3,10 +3,29 @@ import { BookOpen, CheckCircle2, ArrowRight, Sparkles, ChevronRight, Eye } from 
 import { COURSES } from '../data/mockData';
 import { Course } from '../types';
 import { CourseDetailModal } from './CourseDetailModal';
+import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 interface CoursesSectionProps {
   onOpenConsultFormWithCourse: (courseName: string) => void;
 }
+
+// Map course to real photo from CDN
+const getCourseImage = (courseId: string) => {
+  switch (courseId) {
+    case 'course-12-ltdh':
+      return { src: IMAGES.lop12, alt: 'Khóa học Lớp 12 LTĐH tại Trung Tâm Trí Minh' };
+    case 'course-dgnl-hcm':
+      return { src: IMAGES.dgnl, alt: 'Khóa Ôn thi Đánh giá năng lực ĐHQG TP.HCM' };
+    case 'course-tuyen-sinh-10':
+      return { src: IMAGES.lop9len10, alt: 'Khóa Ôn thi Tuyển sinh 9 lên 10' };
+    case 'course-lop-10':
+      return { src: IMAGES.lop10, alt: 'Khóa học Lớp 10 hướng ĐGNL' };
+    case 'course-lop-11':
+      return { src: IMAGES.lop11, alt: 'Khóa học Lớp 11 hướng ĐGNL' };
+    default:
+      return { src: IMAGES.lop12, alt: 'Khóa học tại Trung Tâm Trí Minh' };
+  }
+};
 
 export const CoursesSection: React.FC<CoursesSectionProps> = ({ onOpenConsultFormWithCourse }) => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -29,23 +48,38 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({ onOpenConsultFor
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {COURSES.map((course) => (
-            <div
-              key={course.id}
-              className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col overflow-hidden group"
-            >
-              {/* Header color accent */}
-              <div className={`p-6 bg-gradient-to-r ${course.highlightColor} text-white relative`}>
-                <div className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white/20 backdrop-blur-sm border border-white/30 mb-2">
-                  {course.badge}
+          {COURSES.map((course) => {
+            const courseImg = getCourseImage(course.id);
+            return (
+              <div
+                key={course.id}
+                className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col overflow-hidden group"
+              >
+                {/* Header với ảnh thật 16:9, object-fit: cover, phủ gradient tối mờ ở dưới */}
+                <div className="relative aspect-video w-full overflow-hidden bg-[#0B1B3D]">
+                  <img
+                    src={courseImg.src}
+                    alt={courseImg.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={handleImageErrorToNavy}
+                  />
+                  {/* Phủ gradient tối mờ ở dưới để nhãn và tiêu đề chữ trắng đọc rõ */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D] via-[#0B1B3D]/60 to-transparent" />
+
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col justify-end">
+                    <div className="inline-block self-start px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-orange-500/90 text-white backdrop-blur-sm border border-orange-400/50 mb-1.5 shadow-sm">
+                      {course.badge}
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold text-white leading-snug drop-shadow-sm group-hover:text-amber-300 transition-colors">
+                      {course.title}
+                    </h3>
+                    <p className="text-xs text-slate-200 mt-0.5 line-clamp-1 font-medium">
+                      {course.subtitle}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold leading-snug group-hover:text-amber-200 transition-colors">
-                  {course.title}
-                </h3>
-                <p className="text-xs text-white/80 mt-1 line-clamp-1">
-                  {course.subtitle}
-                </p>
-              </div>
 
               {/* Body */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
@@ -109,7 +143,8 @@ export const CoursesSection: React.FC<CoursesSectionProps> = ({ onOpenConsultFor
                 </div>
               </div>
             </div>
-          ))}
+          );
+        })}
         </div>
       </div>
 

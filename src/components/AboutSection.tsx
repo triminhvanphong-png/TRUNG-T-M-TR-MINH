@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2, Award, BookOpen, Users, Compass, ShieldAlert, ArrowRight } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
+import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 interface AboutSectionProps {
   onOpenConsultForm: () => void;
@@ -29,60 +30,36 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm })
   return (
     <section id="about" className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Visual feature card & campus badge */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative">
-              {/* Decorative accent */}
-              <div className="absolute -top-4 -left-4 w-48 h-48 bg-orange-100 rounded-3xl -z-10" />
-              <div className="absolute -bottom-4 -right-4 w-48 h-48 bg-blue-100 rounded-3xl -z-10" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Cạnh đoạn giới thiệu: bên phải trên máy tính, phía trên trên điện thoại */}
+          <div className="lg:col-span-5 order-1 lg:order-2">
+            <figure className="relative max-w-lg mx-auto lg:max-w-none">
+              <div className="overflow-hidden rounded-[16px] shadow-md border border-slate-200/80 bg-[#0B1B3D]">
+                <img
+                  src={IMAGES.giangBai}
+                  alt="Thầy Cô hướng dẫn học sinh giải bài trực tiếp trên lớp"
+                  loading="lazy"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                  onError={handleImageErrorToNavy}
+                />
+              </div>
+              <figcaption className="mt-2.5 text-center text-xs sm:text-sm text-slate-500 italic font-medium">
+                Thầy Cô hướng dẫn học sinh giải bài trực tiếp trên lớp
+              </figcaption>
 
-              <div className="bg-slate-900 text-white rounded-3xl p-7 sm:p-9 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl" />
-
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-400 border border-orange-500/30 mb-4">
-                  <Award className="w-3.5 h-3.5" />
-                  Kể từ năm 1999
-                </div>
-
-                <h3 className="text-2xl font-black tracking-tight mb-3">
-                  TRUNG TÂM LUYỆN THI ĐẠI HỌC TRÍ MINH
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  Nơi chắp cánh ước mơ giảng đường đại học và trường chuyên lớp chọn cho hàng chục ngàn thế hệ học sinh tại TP.HCM trong suốt 25 năm qua.
-                </p>
-
-                {/* Important Campus Alert Notice */}
-                <div className="p-4 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-200 text-xs space-y-1.5 mb-6">
-                  <div className="flex items-center gap-2 font-bold text-amber-300">
-                    <ShieldAlert className="w-4 h-4 shrink-0 text-amber-400" />
-                    <span>LƯU Ý QUAN TRỌNG VỀ CƠ SỞ:</span>
-                  </div>
-                  <p className="leading-relaxed">
-                    Trung tâm chỉ có <strong className="text-white underline">01 CƠ SỞ DUY NHẤT</strong> tại: <br />
-                    <span className="font-bold text-white">434 đường Tô Ký, xã Đông Thạnh, TP.HCM</span>.
-                  </p>
-                  <p className="text-[11px] text-amber-300/80">
-                    Quý phụ huynh và học sinh lưu ý để tránh các đơn vị mạo danh thương hiệu Trí Minh.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 text-center pt-2 border-t border-slate-800">
-                  <div className="p-2.5 rounded-xl bg-slate-800/60">
-                    <div className="text-xl font-black text-orange-400">25+</div>
-                    <div className="text-[11px] text-slate-400 font-medium">Năm bền vững</div>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-slate-800/60">
-                    <div className="text-xl font-black text-amber-400">10.000+</div>
-                    <div className="text-[11px] text-slate-400 font-medium">Học sinh đỗ đạt</div>
-                  </div>
+              {/* Thông tin cơ sở & thành tích */}
+              <div className="mt-4 p-3.5 rounded-[16px] bg-amber-50/70 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5">
+                <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <div className="leading-relaxed">
+                  <strong className="text-amber-950 font-bold">Chỉ 01 cơ sở duy nhất:</strong> 434 Tô Ký, Đông Thạnh, TP.HCM (Hơn 25 năm thành lập & giảng dạy).
                 </div>
               </div>
-            </div>
+            </figure>
           </div>
 
-          {/* Right Column: Content and Philosophy */}
-          <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          {/* Đoạn giới thiệu: bên trái trên máy tính, phía dưới trên điện thoại */}
+          <div className="lg:col-span-7 order-2 lg:order-1 space-y-6">
             <div className="space-y-2">
               <span className="text-xs font-extrabold uppercase tracking-widest text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
                 Về Chúng Tôi
@@ -123,7 +100,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm })
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="text-xs text-slate-500">
-                Hotline tư vấn nhanh: <a href={`tel:${CENTER_INFO.hotline.replace(/\s+/g, '')}`} className="font-bold text-blue-900 hover:text-orange-600">{CENTER_INFO.hotline}</a>
+                Hotline tư vấn nhanh:{' '}
+                <a
+                  href={`tel:${CENTER_INFO.hotline.replace(/\s+/g, '')}`}
+                  className="font-bold text-blue-900 hover:text-orange-600"
+                >
+                  {CENTER_INFO.hotline}
+                </a>
               </div>
             </div>
           </div>

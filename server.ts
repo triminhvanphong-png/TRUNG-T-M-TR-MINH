@@ -52,17 +52,19 @@ THÔNG TIN QUAN TRỌNG VÀ CHÍNH XÁC CỦA TRÍ MINH:
   + 100% tài liệu học tập được phát miễn phí.
   + Toàn bộ lệ phí thi thử được khấu trừ vào học phí khi đăng ký khóa học.
 
-CÁC KHÓA HỌC:
+CÁC KHÓA HỌC (LỚP 9 – 12):
 1. Lớp 12 LTĐH (2K8 và thí sinh tự do): bám sát cấu trúc đề thi tốt nghiệp THPT mới, thi thử thường xuyên, chiến lược làm bài.
 2. Ôn thi ĐGNL ĐHQG TP.HCM: Toán – Văn – Anh, tư duy logic, phân tích số liệu, đề thi thử mô phỏng.
 3. Ôn thi 9 lên 10: phân tích đề tuyển sinh các năm, định hướng chọn trường.
 4. Lớp 11 hướng ĐGNL (GDPT 2018): rèn luyện mức độ 1–2–3.
 5. Lớp 10 hướng ĐGNL (GDPT 2018): cơ bản đến nâng cao.
-6. Lớp 6, 7, 8 chương trình GDPT 2018.
 
 HAI HỆ LỚP:
-- LỚP CHUẨN: ôn tập củng cố nền tảng, học trước chương trình mới, rèn kỹ năng làm bài, học chắc học đều.
+- LỚP CHUẨN: ôn tập củng cố nền tảng, làm quen – nắm vững kiến thức nền tảng quan trọng, rèn kỹ năng làm bài, học chắc học đều.
 - LỚP ÔN THI CẤP TỐC: dành cho học sinh cần hệ thống lại kiến thức trong thời gian ngắn trước kỳ thi; tập trung các dạng bài trọng tâm, luyện đề và chữa đề sát cấu trúc đề thi.
+
+BẢNG VÀNG 2026:
+- Tự hào có nhiều học viên Trí Minh chinh phục các trường Đại học danh tiếng như ĐH Y Dược TP.HCM, ĐH Bách Khoa TP.HCM, ĐH Y khoa Phạm Ngọc Thạch, ĐH Kinh tế UEH, ĐH Giao thông Vận tải, ĐH KHXH&NV, ĐH Sư phạm TP.HCM.
 
 SỰ KIỆN: "Thi thử ĐGNL 2027" – nhận phiếu phân tích kết quả, tặng sổ tay "Chiến lược chinh phục ĐGNL 2027", chữa đề Toán–Văn–Anh cùng Thầy Cô giỏi, 100% lệ phí thi thử trừ vào học phí, ưu đãi đến 20%.
 

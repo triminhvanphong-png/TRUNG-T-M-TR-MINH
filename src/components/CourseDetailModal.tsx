@@ -2,12 +2,31 @@ import React from 'react';
 import { X, CheckCircle2, Calendar, BookOpen, Users, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Course } from '../types';
 import { CENTER_INFO } from '../data/mockData';
+import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 interface CourseDetailModalProps {
   course: Course | null;
   onClose: () => void;
   onRegisterCourse: (courseName: string) => void;
 }
+
+// Map course to photo from CDN
+const getCourseModalImage = (courseId: string) => {
+  switch (courseId) {
+    case 'course-12-ltdh':
+      return IMAGES.lop12;
+    case 'course-dgnl-hcm':
+      return IMAGES.dgnl;
+    case 'course-tuyen-sinh-10':
+      return IMAGES.lop9len10;
+    case 'course-lop-10':
+      return IMAGES.lop10;
+    case 'course-lop-11':
+      return IMAGES.lop11;
+    default:
+      return IMAGES.lop12;
+  }
+};
 
 export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
   course,
@@ -22,20 +41,31 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
         className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Modal Header */}
-        <div className={`p-6 text-white bg-gradient-to-r ${course.highlightColor} relative`}>
+        {/* Modal Header với ảnh thật */}
+        <div className="relative aspect-[21/9] sm:aspect-[24/9] w-full overflow-hidden bg-[#0B1B3D] text-white">
+          <img
+            src={getCourseModalImage(course.id)}
+            alt={course.title}
+            loading="lazy"
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+            onError={handleImageErrorToNavy}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3D] via-[#0B1B3D]/70 to-[#0B1B3D]/30" />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition cursor-pointer"
+            className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition cursor-pointer z-10"
             aria-label="Đóng"
           >
             <X className="w-5 h-5" />
           </button>
-          <div className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-white/20 backdrop-blur-sm border border-white/30 mb-2">
-            {course.badge}
+          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-orange-600 text-white mb-1.5 shadow">
+              {course.badge}
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black drop-shadow text-white">{course.title}</h3>
+            <p className="text-xs sm:text-sm text-slate-200 mt-1">{course.subtitle}</p>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black">{course.title}</h3>
-          <p className="text-xs sm:text-sm text-white/90 mt-1">{course.subtitle}</p>
         </div>
 
         {/* Modal Body */}
