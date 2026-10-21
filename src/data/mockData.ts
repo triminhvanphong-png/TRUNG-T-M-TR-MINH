@@ -113,7 +113,7 @@ export const COURSES: Course[] = [
     curriculumDetails: [
       'Nắm vững kiến thức cốt lõi lớp 9 và liên kết các năm học trước.',
       'Chuyên đề Toán thực tế: hình học không gian thực tiễn, xác suất, hàm số bậc nhất bậc hai.',
-      'Ngữ văn: Đọc hiểu văn bản ngoài SGK, viết đoạn văn nghị luận 200 chữ, phân tích tác phẩm.',
+      'Ngữ văn: Đọc hiểu văn bản văn học và văn bản thông tin, viết đoạn văn nghị luận 200 chữ, phân tích tác phẩm.',
       'Tiếng Anh: Ngữ pháp thực dụng, từ vựng theo chủ điểm, viết lại câu và bài đọc hiểu.',
     ],
   },
@@ -124,9 +124,9 @@ export const COURSES: Course[] = [
     targetAudience: 'Học sinh lớp 11 theo Chương trình Giáo dục Phổ thông mới',
     badge: 'Chương Trình Mới 2018',
     highlightColor: 'from-sky-600 to-blue-700',
-    description: 'Làm quen – nắm vững kiến thức nền tảng quan trọng, đào sâu bản chất khái niệm theo SGK mới (Kết nối tri thức / Chân trời sáng tạo / Cánh diều), làm quen câu hỏi dạng ĐGNL từ sớm.',
+    description: 'Làm quen – nắm vững kiến thức nền tảng quan trọng, đào sâu bản chất khái niệm theo chương trình GDPT 2018, làm quen câu hỏi dạng ĐGNL từ sớm.',
     features: [
-      'Bám sát chuẩn kiến thức kỹ năng GDPT 2018 các bộ sách hiện hành',
+      'Bám sát chuẩn kiến thức kỹ năng theo chương trình GDPT 2018',
       'Rèn luyện thuần thục mức độ 1–2–3 (Nhận biết – Thông hiểu – Vận dụng)',
       'Làm quen – nắm vững kiến thức nền tảng quan trọng, tự tin đạt kết quả cao trong các bài kiểm tra học kỳ',
       'Làm quen sớm với tư duy đề thi trắc nghiệm Đúng/Sai và Trả lời ngắn',
@@ -158,7 +158,7 @@ export const COURSES: Course[] = [
     curriculumDetails: [
       'Mệnh đề tập hợp, hàm số bậc hai, phương trình, bất phương trình.',
       'Hệ thức lượng trong tam giác, vectơ và các ứng dụng thực tế.',
-      'Rèn văn bản thông tin, nghị luận xã hội theo định hướng SGK mới.',
+      'Rèn văn bản thông tin, nghị luận xã hội theo định hướng chương trình GDPT 2018.',
     ],
   },
 ];
@@ -255,7 +255,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       'Kỳ thi tuyển sinh lớp 10 tại TP.HCM luôn được đánh giá là một trong những kỳ thi có tính cạnh tranh khốc liệt nhất.',
       'Đặc trưng lớn nhất của đề thi TP.HCM là phần Toán thực tế chiếm tỷ lệ điểm số cao, đòi hỏi học sinh không chỉ giỏi công thức mà phải biết mô hình hóa bài toán đời sống.',
       'Môn Tiếng Anh đòi hỏi vốn từ vựng phong phú và kỹ năng làm bài trắc nghiệm nhanh, tránh bẫy ngữ pháp.',
-      'Môn Ngữ văn hướng đến mở rộng đọc hiểu ngoài chương trình SGK và viết văn bản nghị luận xã hội giàu trải nghiệm cá nhân.',
+      'Môn Ngữ văn hướng đến mở rộng đọc hiểu theo chuẩn GDPT 2018 và viết văn bản nghị luận xã hội giàu trải nghiệm cá nhân.',
       'Tại Trung Tâm Trí Minh, các Thầy Cô xây dựng lộ trình ôn thi 9 lên 10 theo 3 chặng rõ ràng: Vững nền tảng -> Làm chủ toán thực tế -> Luyện giải đề thi chính thức các năm.',
     ],
   },
@@ -300,7 +300,7 @@ export const CLASS_COMPARISON = {
     badge: 'Hệ Đào Tạo Nền Tảng',
     target: 'Học sinh cần củng cố kiến thức gốc, học sinh trung bình - khá muốn nâng cao năng lực bền vững.',
     bullets: [
-      'Ôn tập và củng cố vững chắc nền tảng kiến thức SGK và chuẩn GDPT',
+      'Ôn tập và củng cố vững chắc nền tảng kiến thức theo chuẩn chương trình GDPT 2018',
       'Làm quen – nắm vững kiến thức nền tảng quan trọng, tự tin phát biểu xây dựng bài',
       'Rèn kỹ năng giải bài tập cơ bản và thông hiểu, tránh mất điểm oan',
       'Phương pháp giảng dạy chậm rãi, dễ hiểu, cầm tay chỉ việc tận tình',

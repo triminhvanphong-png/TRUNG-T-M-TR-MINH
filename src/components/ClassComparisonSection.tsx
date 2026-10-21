@@ -132,7 +132,7 @@ export const ClassComparisonSection: React.FC<ClassComparisonSectionProps> = ({ 
         <div className="mt-12 text-center text-xs text-slate-500 flex items-center justify-center gap-2">
           <HelpCircle className="w-4 h-4 text-orange-500" />
           <span>
-            Chưa chắc chắn mình phù hợp với hệ lớp nào? Đừng lo lắng, Trí Minh sẽ tổ chức bài kiểm tra đánh giá năng lực đầu vào miễn phí để tư vấn xếp lớp chuẩn xác nhất!
+            Chưa chắc chắn mình phù hợp với hệ lớp nào? Đừng lo lắng! Trung tâm tư vấn và xếp lớp phù hợp với năng lực, mục tiêu của học sinh.
           </span>
         </div>
       </div>

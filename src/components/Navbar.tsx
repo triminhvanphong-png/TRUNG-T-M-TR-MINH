@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MapPin, Clock, Menu, X, GraduationCap, ChevronRight, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, Clock, Menu, X, ChevronRight, MessageCircle } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
+import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 interface NavbarProps {
   onOpenConsultModal: () => void;
@@ -88,8 +89,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal, onOpenChatbo
             onClick={(e) => handleLinkClick(e, '#home')}
             className="flex items-center gap-3 group text-left"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-md shadow-orange-600/30 text-white font-black text-xl tracking-tight border border-orange-400/30 group-hover:scale-105 transition-transform">
-              <GraduationCap className="w-6 h-6 text-white" />
+            <div className="w-11 h-11 rounded-xl bg-white/10 p-1 border border-white/20 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center shrink-0">
+              <img
+                src={IMAGES.logo}
+                alt="Logo Trung Tâm Luyện Thi Đại Học Trí Minh"
+                className="w-full h-full object-contain"
+                onError={handleImageErrorToNavy}
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">

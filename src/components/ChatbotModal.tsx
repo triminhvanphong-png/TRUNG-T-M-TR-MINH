@@ -94,8 +94,10 @@ export const ChatbotModal: React.FC<ChatbotModalProps> = ({
         replyText = 'Trí Minh có 2 hệ lớp:\n1. LỚP CHUẨN: Củng cố nền tảng, học trước chương trình mới, rèn kỹ năng làm bài, phương châm "Học chắc - Học đều".\n2. LỚP ÔN THI CẤP TỐC: Dành cho học sinh cần hệ thống lại kiến thức trong thời gian ngắn trước kỳ thi; tập trung các dạng bài trọng tâm, luyện đề và chữa đề sát cấu trúc đề thi.';
       } else if (lower.includes('địa chỉ') || lower.includes('ở đâu')) {
         replyText = 'Trung Tâm Luyện Thi Đại Học Trí Minh tọa lạc tại 434 đường Tô Ký, xã Đông Thạnh, TP.HCM. Lưu ý: Trung tâm chỉ có 1 CƠ SỞ DUY NHẤT để đảm bảo chất lượng giảng dạy tốt nhất!';
+      } else if (lower.includes('xếp lớp') || lower.includes('kiểm tra') || lower.includes('test') || lower.includes('đầu vào')) {
+        replyText = 'Trung tâm tư vấn và xếp lớp phù hợp với năng lực, mục tiêu của học sinh. Bạn vui lòng liên hệ Hotline 0703 672 542 hoặc để lại thông tin tại Form Đăng Ký Tư Vấn để Thầy Cô hỗ trợ chu đáo nhất!';
       } else {
-        replyText = 'Dạ cảm ơn bạn đã quan tâm. Để nhận thông tin chi tiết và xếp lịch kiểm tra trình độ đầu vào cùng Thầy Cô, bạn vui lòng gọi ngay Hotline 0703 672 542 hoặc nhấn nút "Đăng Ký Tư Vấn" trên trang nhé!';
+        replyText = 'Dạ cảm ơn bạn đã quan tâm. Trung tâm tư vấn và xếp lớp phù hợp với năng lực, mục tiêu của học sinh. Bạn vui lòng gọi ngay Hotline 0703 672 542 hoặc nhấn nút "Đăng Ký Tư Vấn" trên trang nhé!';
       }
 
       setMessages((prev) => [

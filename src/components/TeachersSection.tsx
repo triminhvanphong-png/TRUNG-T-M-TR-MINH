@@ -146,12 +146,12 @@ const getInitialFromTen = (hoTen: string): string => {
 
 // Thứ tự bộ môn theo yêu cầu: Toán, Lý, Hóa, Sinh, Anh, Văn
 const CAC_MON_HOC: Array<{ key: 'Toán' | 'Lý' | 'Hóa' | 'Sinh' | 'Anh' | 'Văn'; label: string }> = [
-  { key: 'Toán', label: 'Môn Toán' },
-  { key: 'Lý', label: 'Môn Lý' },
-  { key: 'Hóa', label: 'Môn Hóa' },
-  { key: 'Sinh', label: 'Môn Sinh' },
-  { key: 'Anh', label: 'Môn Anh' },
-  { key: 'Văn', label: 'Môn Văn' },
+  { key: 'Toán', label: 'MÔN TOÁN' },
+  { key: 'Lý', label: 'MÔN LÝ' },
+  { key: 'Hóa', label: 'MÔN HÓA' },
+  { key: 'Sinh', label: 'MÔN SINH' },
+  { key: 'Anh', label: 'MÔN ANH' },
+  { key: 'Văn', label: 'MÔN VĂN' },
 ];
 
 export const TeachersSection: React.FC = () => {
@@ -180,14 +180,14 @@ export const TeachersSection: React.FC = () => {
           </div>
 
           {/* 2 thẻ nổi bật đặt cạnh nhau (1 cột trên điện thoại), viền cam, thẻ Hiệu trưởng đứng trước */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl items-stretch">
             {DANH_SACH_BAN_LANH_DAO.map((lanhDao, index) => {
               const chuCaiDau = getInitialFromTen(lanhDao.hoTen);
 
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl border-2 border-orange-500 p-6 sm:p-7 shadow-lg shadow-orange-500/10 flex flex-col justify-between hover:shadow-xl transition-all"
+                  className="bg-white rounded-2xl border-2 border-orange-500 p-6 sm:p-7 shadow-lg shadow-orange-500/10 flex flex-col justify-between hover:shadow-xl transition-all h-full"
                 >
                   <div className="space-y-4">
                     {/* Header thẻ: Vòng tròn chữ cái đầu + Họ tên + Nhãn chức vụ màu cam đậm */}
@@ -198,9 +198,9 @@ export const TeachersSection: React.FC = () => {
                           {chuCaiDau}
                         </div>
 
-                        {/* Họ tên: viết hoa chữ cái đầu mỗi từ, chữ đậm, màu xanh đậm */}
+                        {/* Họ tên: viết hoa chữ cái đầu mỗi từ, chữ đậm, màu xanh đậm, không truncate */}
                         <div>
-                          <h4 className="font-extrabold text-blue-950 text-lg sm:text-xl tracking-tight leading-snug">
+                          <h4 className="font-extrabold text-blue-950 text-lg sm:text-xl tracking-tight leading-snug break-words">
                             {lanhDao.hoTen}
                           </h4>
                           <div className="flex items-center gap-2 flex-wrap mt-0.5">
@@ -265,8 +265,8 @@ export const TeachersSection: React.FC = () => {
                   </h3>
                 </div>
 
-                {/* Lưới 4 cột máy tính, 2 cột máy tính bảng, 1 cột điện thoại */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                {/* Lưới 4 cột máy tính, 2 cột máy tính bảng, 1 cột điện thoại - các thẻ trong cùng hàng cao bằng nhau */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
                   {danhSachMon.map((gv, idx) => {
                     const chuCaiDau = getInitialFromTen(gv.hoTen);
                     const coKinhNghiem =
@@ -277,45 +277,38 @@ export const TeachersSection: React.FC = () => {
                     return (
                       <div
                         key={idx}
-                        className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between"
+                        className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col h-full justify-between"
                       >
-                        <div className="space-y-3.5">
-                          {/* Header thẻ: Vòng tròn chữ cái đầu + Tên + Badge bộ môn */}
-                          <div className="flex items-start justify-between gap-2.5">
-                            <div className="flex items-center gap-2.5 min-w-0">
-                              {/* 1. Vòng tròn nhỏ màu xanh đậm có chữ cái đầu của TÊN */}
-                              <div className="w-9 h-9 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-sm shadow-sm shrink-0">
-                                {chuCaiDau}
-                              </div>
-
-                              {/* 2. Họ tên (viết hoa chữ cái đầu mỗi từ, chữ đậm, màu xanh đậm) */}
-                              <h4 className="font-bold text-blue-950 text-sm sm:text-base leading-snug truncate">
-                                {gv.hoTen}
-                              </h4>
+                        <div>
+                          {/* 1. Vòng tròn chữ cái ở trên */}
+                          <div className="flex flex-col items-center text-center">
+                            <div className="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold text-lg shadow-sm mb-3 shrink-0 mx-auto">
+                              {chuCaiDau}
                             </div>
 
-                            {/* 3. Nhãn bộ môn (badge cam nhạt) */}
-                            <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-orange-100 text-orange-800 border border-orange-200 shrink-0">
-                              {gv.monHoc}
-                            </span>
+                            {/* 2. Họ tên đầy đủ: chữ đậm, cỡ 17-18px, màu navy, căn giữa - KHÔNG cắt tên bằng dấu "...", tên dài tự xuống dòng */}
+                            <h4 className="font-bold text-blue-950 text-[17px] sm:text-[18px] text-center leading-snug break-words">
+                              {gv.hoTen}
+                            </h4>
                           </div>
 
-                          <div className="h-px bg-slate-100 w-full" />
+                          {/* 3. Đường kẻ mảnh */}
+                          <div className="h-px bg-slate-100 w-full my-3.5" />
 
-                          {/* 4. 🎓 Trình độ / chức vụ */}
+                          {/* 4. 🎓 Trình độ (bỏ nhãn bộ môn nhỏ ở góc mỗi thẻ vì đã có tiêu đề MÔN ở trên) */}
                           <div className="flex items-start gap-2 text-xs text-slate-700 leading-relaxed">
                             <span className="shrink-0 text-sm">🎓</span>
-                            <span className="font-normal">{gv.trinhDo}</span>
+                            <span className="font-normal text-slate-700">{gv.trinhDo}</span>
                           </div>
-
-                          {/* 5. ⏱ Kinh nghiệm — nếu để trống thì ẨN dòng này */}
-                          {coKinhNghiem && (
-                            <div className="flex items-start gap-2 text-xs text-orange-900 font-semibold leading-relaxed">
-                              <span className="shrink-0 text-sm">⏱</span>
-                              <span>{gv.kinhNghiem}</span>
-                            </div>
-                          )}
                         </div>
+
+                        {/* 5. ⏱ Kinh nghiệm — nếu để trống thì ẨN dòng này */}
+                        {coKinhNghiem && (
+                          <div className="flex items-start gap-2 text-xs text-orange-900 font-semibold leading-relaxed pt-2.5 mt-2.5 border-t border-slate-50">
+                            <span className="shrink-0 text-sm">⏱</span>
+                            <span>{gv.kinhNghiem}</span>
+                          </div>
+                        )}
                       </div>
                     );
                   })}

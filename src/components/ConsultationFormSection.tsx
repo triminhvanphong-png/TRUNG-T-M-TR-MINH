@@ -308,7 +308,7 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
                     />
                     <div>
                       <div className="text-xs sm:text-sm font-bold">Chưa rõ – cần tư vấn</div>
-                      <div className="text-[10px] text-slate-500">Kiểm tra đầu vào & tư vấn</div>
+                      <div className="text-[10px] text-slate-500">Tư vấn & xếp lớp phù hợp</div>
                     </div>
                   </div>
                 </label>

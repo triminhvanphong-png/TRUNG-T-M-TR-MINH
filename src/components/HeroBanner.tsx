@@ -112,7 +112,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
             </div>
 
             <p className="text-xs text-blue-300">
-              * Phòng Đào tạo trực máy 08:00 – 21:00 hàng ngày để tư vấn xếp lớp & kiểm tra trình độ đầu vào.
+              * Trung tâm tư vấn và xếp lớp phù hợp với năng lực, mục tiêu của học sinh (Phòng Đào tạo trực máy 08:00 – 21:00 hàng ngày).
             </p>
           </div>
 

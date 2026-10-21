@@ -1,6 +1,7 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Facebook, Youtube, GraduationCap, ShieldAlert, ChevronRight, Heart } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Youtube, ShieldAlert, ChevronRight, Heart } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
+import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 export const Footer: React.FC = () => {
   return (
@@ -10,8 +11,13 @@ export const Footer: React.FC = () => {
           {/* Col 1: Center Identity & Slogan (4 cols) */}
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white shadow-lg shadow-orange-600/30">
-                <GraduationCap className="w-7 h-7" />
+              <div className="w-12 h-12 rounded-2xl bg-white/10 p-1 border border-white/20 flex items-center justify-center shadow-lg shrink-0">
+                <img
+                  src={IMAGES.logo}
+                  alt="Logo Trung Tâm Luyện Thi Đại Học Trí Minh"
+                  className="w-full h-full object-contain"
+                  onError={handleImageErrorToNavy}
+                />
               </div>
               <div>
                 <h3 className="text-lg font-black text-white tracking-wide uppercase">

@@ -9,6 +9,7 @@ export const IMAGES = {
   lop9len10: `${BASE}9-len-10.jpg`,
   lop10: `${BASE}lop-10.jpg`,
   lop11: `${BASE}lop-11.jpg`,
+  logo: `${BASE}logo.png`,
 } as const;
 
 // Khi ảnh không tải được: hiển thị nền màu xanh navy, KHÔNG thay bằng ảnh khác
