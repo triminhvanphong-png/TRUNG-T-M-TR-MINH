@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal }) => {
           <div className="flex items-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5 text-amber-400 font-medium">
               <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              Thành lập 1999 • Hơn 25 năm kinh nghiệm luyện thi tại TP.HCM
+              Thành lập từ năm 1999 – Hơn 27 năm đồng hành cùng Phụ huynh & Học sinh
             </span>
             <span className="hidden md:flex items-center gap-1 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-orange-400" />
@@ -86,27 +86,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal }) => {
           <a
             href="#home"
             onClick={(e) => handleLinkClick(e, '#home')}
-            className="flex items-center gap-3 group text-left"
+            className="flex items-center gap-2.5 sm:gap-3 group text-left"
           >
-            <div className="w-11 h-11 rounded-xl bg-white/10 p-1 border border-white/20 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center shrink-0">
-              <img
-                src={IMAGES.logo}
-                alt="Logo Trung Tâm Luyện Thi Đại Học Trí Minh"
-                className="w-full h-full object-contain"
-                onError={handleImageErrorToNavy}
-              />
-            </div>
+            <img
+              src={IMAGES.logo}
+              alt="Logo Trung Tâm Luyện Thi Đại Học Trí Minh"
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+              onError={handleImageErrorToNavy}
+            />
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-white font-extrabold text-lg sm:text-xl tracking-wide uppercase">
-                  TRÍ MINH
-                </span>
-                <span className="text-[10px] uppercase font-bold bg-orange-500/20 text-orange-400 border border-orange-500/30 px-1.5 py-0.5 rounded">
-                  EST. 1999
-                </span>
+              <div className="text-white font-extrabold text-sm sm:text-base md:text-lg tracking-wide uppercase leading-tight">
+                TRÍ MINH
               </div>
-              <p className="text-[11px] sm:text-xs text-blue-200 font-medium tracking-normal hidden xs:block">
-                Trung Tâm Luyện Thi Đại Học TP.HCM
+              <p className="text-[11px] sm:text-xs text-amber-300 font-medium tracking-normal whitespace-nowrap">
+                Luyện thi Đại học · Từ 1999
               </p>
             </div>
           </a>

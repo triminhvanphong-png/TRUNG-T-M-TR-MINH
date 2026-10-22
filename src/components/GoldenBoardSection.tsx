@@ -118,7 +118,7 @@ export const GoldenBoardSection: React.FC<GoldenBoardSectionProps> = ({ onOpenCo
             Gương Mặt Tiêu Biểu 2026
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-white/80 font-medium">
-            Một số học viên Trí Minh tiêu biểu đã chinh phục các trường Đại học hàng đầu TP.HCM
+            Một số học viên Trí Minh tiêu biểu trúng tuyển các trường Đại học uy tín tại TP.HCM
           </p>
           <p className="text-xs sm:text-sm text-amber-200/90 font-medium tracking-wide pt-1">
             Học viên đậu vào ĐH Y Dược · ĐH Y khoa Phạm Ngọc Thạch · ĐH Bách Khoa · ĐH Kinh tế · ĐH KHXH & NV · ĐH Sư phạm · ĐH GTVT TP.HCM

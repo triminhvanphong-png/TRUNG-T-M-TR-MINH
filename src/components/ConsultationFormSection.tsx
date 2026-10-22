@@ -146,15 +146,15 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
           <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-500 via-red-500 to-blue-900" />
 
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
-              Tư Vấn Miễn Phí & Giữ Chỗ
-            </span>
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black text-orange-950 bg-amber-100 border border-amber-300 shadow-sm uppercase tracking-wide">
+              Chất lượng cao – Học phí phù hợp
+            </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
               Đăng Ký Tư Vấn & Nhận Báo Học Phí
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Điền thông tin bên dưới, Phòng Đào Tạo Trung Tâm Trí Minh sẽ liên hệ trong thời gian sớm nhất để tư vấn lộ trình học và gửi báo học phí ưu đãi!
+              Điền thông tin bên dưới, Phòng Đào Tạo Trung Tâm Trí Minh sẽ liên hệ sớm để tư vấn xếp lớp và gửi báo học phí ưu đãi!
             </p>
           </div>
 
@@ -248,14 +248,11 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
                   onChange={(e) => setFormData({ ...formData, lop: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm bg-slate-50/50"
                 >
-                  <option value="Lớp 12">Lớp 12 (Năm học 2026-2027)</option>
-                  <option value="Lớp 11">Lớp 11 (GDPT 2018)</option>
-                  <option value="Lớp 10">Lớp 10 (GDPT 2018)</option>
-                  <option value="Lớp 9">Lớp 9 (Chuẩn bị thi tuyển sinh 10)</option>
-                  <option value="Lớp 8">Lớp 8</option>
-                  <option value="Lớp 7">Lớp 7</option>
-                  <option value="Lớp 6">Lớp 6</option>
-                  <option value="Thí sinh tự do">Thí sinh tự do / Thi lại</option>
+                  <option value="Lớp 12">Lớp 12</option>
+                  <option value="Lớp 11">Lớp 11</option>
+                  <option value="Lớp 10">Lớp 10</option>
+                  <option value="Lớp 9">Lớp 9 (Ôn thi vào 10)</option>
+                  <option value="Thí sinh tự do">Thí sinh tự do</option>
                 </select>
               </div>
 
@@ -274,9 +271,8 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
                     <option value="Lớp 12 Luyện Thi Đại Học (LTĐH)">Lớp 12 Luyện Thi Đại Học (LTĐH)</option>
                     <option value="Ôn Thi Đánh Giá Năng Lực (ĐGNL) ĐHQG TP.HCM">Ôn Thi ĐGNL ĐHQG TP.HCM</option>
                     <option value="Ôn Thi Tuyển Sinh 9 Lên 10">Ôn Thi Tuyển Sinh 9 Lên 10</option>
-                    <option value="Lớp 11 Định Hướng ĐGNL (GDPT 2018)">Lớp 11 Định Hướng ĐGNL (GDPT 2018)</option>
-                    <option value="Lớp 10 Định Hướng ĐGNL (GDPT 2018)">Lớp 10 Định Hướng ĐGNL (GDPT 2018)</option>
-                    <option value="Khối Lớp 6, 7, 8 Chương Trình GDPT 2018">Khối Lớp 6, 7, 8 GDPT 2018</option>
+                    <option value="Lớp 11 (Chương Trình GDPT 2018, Hướng ĐGNL)">Lớp 11 (GDPT 2018)</option>
+                    <option value="Lớp 10 (Chương Trình GDPT 2018, Hướng ĐGNL)">Lớp 10 (GDPT 2018)</option>
                     <option value="Kỳ Thi Thử ĐGNL 2027">Kỳ Thi Thử ĐGNL 2027</option>
                   </select>
                 </div>

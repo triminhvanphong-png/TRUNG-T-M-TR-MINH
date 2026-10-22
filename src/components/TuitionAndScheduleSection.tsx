@@ -22,7 +22,7 @@ export const TuitionAndScheduleSection: React.FC<TuitionAndScheduleSectionProps>
     },
     {
       title: 'Tài Liệu Học Tập Miễn Phí 100%',
-      desc: 'Toàn bộ giáo trình biên soạn độc quyền, đề thi thử, tóm tắt lý thuyết rút gọn và tuyển tập bài tập phân dạng đều được phát miễn phí.',
+      desc: 'Toàn bộ tài liệu học tập, đề thi thử, tóm tắt lý thuyết rút gọn và tuyển tập bài tập phân dạng đều được phát miễn phí.',
       icon: <FileText className="w-5 h-5 text-blue-500" />,
       bg: 'bg-blue-50/70 border-blue-200',
     },
@@ -78,7 +78,7 @@ export const TuitionAndScheduleSection: React.FC<TuitionAndScheduleSectionProps>
                   Mỗi khóa học gồm 4 tuần (tương đương 1 tháng)
                 </h3>
                 <p className="text-xs sm:text-sm text-blue-200 leading-relaxed max-w-xl">
-                  Lộ trình học tập được thiết kế khoa học, đảm bảo học sinh tiếp thu chắc chắn kiến thức và có thời gian rèn luyện bài tập thực chiến.
+                  Lộ trình học tập được thiết kế khoa học, đảm bảo học sinh tiếp thu chắc chắn kiến thức và có thời gian rèn luyện bài tập bám sát cấu trúc đề thi.
                 </p>
               </div>
 
@@ -156,7 +156,7 @@ export const TuitionAndScheduleSection: React.FC<TuitionAndScheduleSectionProps>
           </div>
 
           <p className="text-[11px] text-slate-500">
-            * Trung tâm cam kết bảo mật thông tin và hỗ trợ tư vấn hoàn toàn miễn phí.
+            * Trung tâm luôn bảo mật thông tin và hỗ trợ tư vấn hoàn toàn miễn phí.
           </p>
         </div>
 

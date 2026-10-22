@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Center Identity & Slogan (4 cols) */}
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 p-1 border border-white/20 flex items-center justify-center shadow-lg shrink-0">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 p-1 border border-white/20 flex items-center justify-center shadow-lg shrink-0">
                 <img
                   src={IMAGES.logo}
                   alt="Logo Trung Tâm Luyện Thi Đại Học Trí Minh"
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              Hơn 25 năm tận tâm cống hiến vì sự nghiệp giáo dục. Trung Tâm Trí Minh luôn là địa chỉ tin cậy của Quý phụ huynh và các thế hệ học sinh TP.HCM trong các kỳ thi Tốt nghiệp THPT, ĐGNL ĐHQG và Tuyển sinh lớp 10.
+              Thành lập từ năm 1999 – Hơn 27 năm đồng hành cùng Phụ huynh & Học sinh. Trung Tâm Trí Minh luôn là địa chỉ tin cậy của Quý phụ huynh và các thế hệ học sinh TP.HCM trong các kỳ thi Tốt nghiệp THPT, ĐGNL ĐHQG và Tuyển sinh lớp 10.
             </p>
 
             {/* Slogans */}

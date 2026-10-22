@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Award, BookOpen, Users, Compass, ShieldAlert, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ShieldAlert, ArrowRight } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
 import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
@@ -10,20 +10,20 @@ interface AboutSectionProps {
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm }) => {
   const highlightPoints = [
     {
-      title: 'Chuyên môn sâu & Toàn diện',
-      desc: 'Chuyên luyện thi đại học, kỳ thi Đánh giá năng lực (ĐGNL) ĐHQG TP.HCM, ôn thi tuyển sinh lớp 10 và bồi dưỡng các khối lớp từ 6 đến 12 theo chuẩn GDPT mới.',
+      title: 'Đúng trọng tâm – Đúng cấu trúc đề thi mới',
+      desc: 'Luyện thi Đại học, Đánh giá năng lực ĐHQG TP.HCM, ôn thi 9 lên 10 và các lớp 10, 11, 12 theo chương trình GDPT 2018.',
     },
     {
-      title: 'Đội ngũ Thầy Cô giàu kinh nghiệm',
-      desc: 'Nhiều Thầy Cô được Sở GD&ĐT TP.HCM công nhận danh hiệu dạy giỏi, thạc sĩ đầu ngành, tận tụy và thấu hiểu tâm lý học sinh.',
+      title: 'Thầy Cô giàu kinh nghiệm',
+      desc: 'Nhiều Thầy Cô nguyên là Tổ trưởng bộ môn trường THPT, có hơn 20 – 40 năm kinh nghiệm luyện thi Đại học.',
     },
     {
-      title: 'Phương pháp giảng dạy ưu việt',
-      desc: 'Hệ thống hóa toàn bộ chương trình, phân loại bài tập theo từng dạng đề cụ thể, rút gọn lý thuyết cô đọng, dễ hiểu, dễ nhớ và ứng dụng thực chiến ngay.',
+      title: 'Học chuẩn – Hiểu sâu – Tăng điểm ngay',
+      desc: 'Hệ thống hóa chương trình, giải theo từng dạng đề, rút gọn lý thuyết dễ nhớ dễ học. Tài liệu do ban giảng huấn biên soạn, phát miễn phí.',
     },
     {
-      title: 'Cam kết sát sao từng học viên',
-      desc: 'Theo dõi tiến độ, kiểm tra định kỳ phân tích phổ điểm, thông báo kết quả cho phụ huynh và tổ chức phụ đạo bổ trợ cho học sinh chưa vững.',
+      title: 'Theo dõi tiến độ – Báo cáo năng lực định kỳ',
+      desc: 'Thầy Cô theo sát từng học sinh, kiểm tra định kỳ và trao đổi kết quả với Phụ huynh.',
     },
   ];
 
@@ -52,7 +52,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm })
               <div className="mt-4 p-3.5 rounded-[16px] bg-amber-50/70 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5">
                 <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                 <div className="leading-relaxed">
-                  <strong className="text-amber-950 font-bold">Chỉ 01 cơ sở duy nhất:</strong> 434 Tô Ký, Đông Thạnh, TP.HCM (Hơn 25 năm thành lập & giảng dạy).
+                  <strong className="text-amber-950 font-bold">Chỉ 01 cơ sở duy nhất:</strong> 434 Tô Ký, Đông Thạnh, TP.HCM (Thành lập từ năm 1999 – Hơn 27 năm đồng hành cùng Phụ huynh & Học sinh).
                 </div>
               </div>
             </figure>
@@ -70,22 +70,22 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm })
               </h2>
             </div>
 
-            <p className="text-base text-slate-600 leading-relaxed">
-              Thành lập từ năm 1999, <strong>Trung Tâm Luyện Thi Đại Học Trí Minh</strong> tự hào là cái nôi đào tạo uy tín hàng đầu khu vực TP.HCM. Chúng tôi kiên định với tôn chỉ <em>"Tận tâm – Kinh nghiệm – Hiệu quả cao"</em>, không dạy mẹo chụp giật mà chú trọng rèn luyện tư duy bản chất, củng cố nền tảng vững vàng để học sinh tự tin bước vào mọi kỳ thi lớn.
+            <p className="text-base text-slate-700 leading-relaxed font-normal">
+              Trung tâm Luyện thi Đại học Trí Minh thành lập từ năm 1999, nguyên là Trung tâm Luyện thi Đại học – Đại học Sư phạm (chi nhánh Hóc Môn). Hơn 27 năm qua, trung tâm đồng hành cùng Phụ huynh & Học sinh với phương châm Tận tâm – Kinh nghiệm – Hiệu quả cao. Hằng năm, tỷ lệ đậu Đại học của học sinh tại trung tâm rất cao (có năm đạt trên 70%).
             </p>
 
-            {/* Feature List */}
+            {/* 4 ô nổi bật */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {highlightPoints.map((pt, idx) => (
                 <div
                   key={idx}
                   className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/40 transition-colors"
                 >
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
-                    <h4 className="text-sm font-bold text-slate-900">{pt.title}</h4>
+                  <div className="flex items-start gap-2 mb-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
+                    <h4 className="text-sm font-bold text-slate-900 leading-snug">{pt.title}</h4>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">{pt.desc}</p>
+                  <p className="text-xs text-slate-600 leading-relaxed pl-6">{pt.desc}</p>
                 </div>
               ))}
             </div>
@@ -96,7 +96,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultForm })
                 onClick={onOpenConsultForm}
                 className="px-6 py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-md shadow-orange-600/20 flex items-center gap-2 cursor-pointer transition"
               >
-                <span>Nhận Tư Vấn Lộ Trình Học</span>
+                <span>Nhận Tư Vấn Khóa Học</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="text-xs text-slate-500">

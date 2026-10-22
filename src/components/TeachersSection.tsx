@@ -121,6 +121,12 @@ const DANH_SACH_GIAO_VIEN: Array<{
     trinhDo: 'Cử nhân Ngôn ngữ Anh – Đại học Mở TP.HCM',
     kinhNghiem: '',
   },
+  {
+    hoTen: 'Cô Phạm Ái Nhi',
+    monHoc: 'Anh',
+    trinhDo: 'Cử nhân Đại học Sư phạm',
+    kinhNghiem: 'Hơn 10 năm kinh nghiệm giảng dạy THPT',
+  },
 
   // VĂN
   {

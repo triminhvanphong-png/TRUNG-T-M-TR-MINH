@@ -34,24 +34,24 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-orange-500/20 text-orange-300 border border-orange-500/40 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-orange-400" />
-                KHÓA HÈ 2026 ĐANG TUYỂN SINH
+                KHAI GIẢNG THƯỜNG XUYÊN
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-900/60 text-blue-200 border border-blue-700/60">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                Thành lập 1999 • Hơn 25 năm uy tín
+                Thành lập từ năm 1999 – Hơn 27 năm đồng hành cùng Phụ huynh & Học sinh
               </span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight text-white">
-                Khai Giảng Khóa Hè 2026
+                KHAI GIẢNG THƯỜNG XUYÊN
                 <span className="block mt-2 bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-400 bg-clip-text text-transparent">
-                  Lớp 8 • 9 • 10 • 11 • 12 LTĐH – ĐGNL TPHCM
+                  Lớp 9 • 10 • 11 • 12 LTĐH – ĐGNL TPHCM
                 </span>
               </h1>
-              <p className="text-sm sm:text-base text-blue-200 font-bold uppercase tracking-wider">
-                Trung Tâm Luyện Thi Đại Học Trí Minh (TP.HCM)
+              <p className="text-sm sm:text-base text-amber-300 font-extrabold tracking-wide uppercase">
+                Học đúng sức – Rèn đúng cách – Đạt điểm cao
               </p>
             </div>
 
@@ -72,23 +72,23 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
               </div>
             </div>
 
-            {/* Key Quick Bullets */}
+            {/* 4 ý ngắn dưới banner theo đúng yêu cầu tờ rơi */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-200 max-w-xl mx-auto lg:mx-0">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Thầy Cô giỏi Sở GD&ĐT giàu kinh nghiệm</span>
+                <span>Thầy Cô giàu kinh nghiệm luyện thi</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Phương pháp rút gọn lý thuyết, giải theo dạng</span>
+                <span>Tài liệu bám sát cấu trúc đề thi mới nhất</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Hệ thống 2 hệ: Lớp Chuẩn & Lớp Ôn thi Cấp tốc</span>
+                <span>Hai hệ: Lớp Chuẩn & Lớp Ôn thi Cấp tốc</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Giảm ≥10% học phí cho học viên cũ</span>
+                <span>Giảm ít nhất 10% học phí cho học viên cũ</span>
               </div>
             </div>
 
@@ -98,7 +98,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
                 onClick={onOpenConsultForm}
                 className="px-8 py-4 rounded-xl font-extrabold text-base text-white bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-lg shadow-orange-600/30 hover:shadow-orange-600/50 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>ĐĂNG KÝ NGAY</span>
+                <span>ĐĂNG KÝ TƯ VẤN</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
 
@@ -134,38 +134,38 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onOpenConsultForm }) => 
                     </div>
                   </div>
                   <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded-full">
-                    Uy Tín 25 Năm
+                    Hơn 27 Năm Uy Tín
                   </span>
                 </div>
 
                 <div className="py-5 space-y-4">
                   <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400 flex items-center gap-2">
                     <BookOpen className="w-4 h-4" />
-                    Các Khóa Đang Nhận Hồ Sơ Hè 2026:
+                    Các Khóa Học Tuyển Sinh Thường Xuyên:
                   </h4>
                   <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
                     <li className="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
                       <span className="w-2 h-2 rounded-full bg-orange-500 mt-1.5 shrink-0"></span>
                       <div>
-                        <strong className="text-white">Lớp 12 LTĐH (2K8):</strong> Bám sát đề thi TN THPT mới, giải đề và thi thử liên tục.
+                        <strong className="text-white">Lớp 12 LTĐH:</strong> Ôn trọn kiến thức lớp 10 – 11 – 12, luyện đủ 3 dạng câu hỏi.
                       </div>
                     </li>
                     <li className="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
                       <span className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0"></span>
                       <div>
-                        <strong className="text-white">Luyện thi ĐGNL ĐHQG TP.HCM:</strong> Trọn gói Toán - Văn - Anh & tư duy logic.
+                        <strong className="text-white">Ôn thi ĐGNL ĐHQG TP.HCM:</strong> Trọn bộ đề chuẩn cấu trúc, học cùng Thầy Cô hơn 27 năm kinh nghiệm.
                       </div>
                     </li>
                     <li className="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span>
                       <div>
-                        <strong className="text-white">Ôn thi 9 lên 10:</strong> Chuyên sâu 3 môn Toán, Văn, Anh, chinh phục trường công lập top đầu.
+                        <strong className="text-white">Ôn thi 9 lên 10:</strong> Toán – Ngữ văn – Tiếng Anh, phân tích đề tuyển sinh các năm.
                       </div>
                     </li>
                     <li className="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
                       <span className="w-2 h-2 rounded-full bg-sky-400 mt-1.5 shrink-0"></span>
                       <div>
-                        <strong className="text-white">Lớp 10 – 11 GDPT 2018:</strong> Xây nền tảng vững vàng, rèn luyện 3 mức độ nhận biết – thông hiểu – vận dụng.
+                        <strong className="text-white">Lớp 10 & 11 GDPT 2018:</strong> Vững nền – Học theo chuyên đề – Rèn tư duy từng bước.
                       </div>
                     </li>
                   </ul>

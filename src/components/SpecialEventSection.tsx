@@ -15,8 +15,8 @@ export const SpecialEventSection: React.FC<SpecialEventSectionProps> = ({ onRegi
     },
     {
       icon: <Gift className="w-5 h-5 text-amber-400" />,
-      title: 'Tặng Sổ Tay Độc Quyền',
-      desc: 'Nhận ngay cẩm nang "Chiến lược chinh phục ĐGNL 2027" do ban giảng huấn Trí Minh trực tiếp biên soạn.',
+      title: 'Tặng Sổ Tay Hướng Dẫn Ôn Thi',
+      desc: 'Nhận ngay cẩm nang "Chiến lược ôn thi ĐGNL 2027" do ban giảng huấn Trí Minh trực tiếp biên soạn.',
     },
     {
       icon: <BookMarked className="w-5 h-5 text-emerald-400" />,
@@ -138,7 +138,7 @@ export const SpecialEventSection: React.FC<SpecialEventSectionProps> = ({ onRegi
                     <Gift className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-white">Quà tặng đặc biệt:</strong>
-                      <p>Sổ tay "Chiến Lược Chinh Phục ĐGNL 2027" (Số lượng có hạn cho học viên đăng ký sớm)</p>
+                      <p>Sổ tay "Chiến Lược Ôn Thi ĐGNL 2027" (Số lượng có hạn cho học viên đăng ký sớm)</p>
                     </div>
                   </div>
                 </div>
