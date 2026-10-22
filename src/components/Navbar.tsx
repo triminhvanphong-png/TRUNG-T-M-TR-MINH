@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MapPin, Clock, Menu, X, ChevronRight, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, Clock, Menu, X, ChevronRight } from 'lucide-react';
 import { CENTER_INFO } from '../data/mockData';
 import { IMAGES, handleImageErrorToNavy } from '../constants/images';
 
 interface NavbarProps {
   onOpenConsultModal: () => void;
-  onOpenChatbot: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal, onOpenChatbot }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -129,15 +128,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal, onOpenChatbo
           {/* Action Button & Mobile Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
             <button
-              onClick={onOpenChatbot}
-              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-blue-100 bg-blue-900/80 hover:bg-blue-800 rounded-lg border border-blue-700 transition"
-              title="Trợ lý tư vấn AI Trí Minh"
-            >
-              <MessageCircle className="w-4 h-4 text-orange-400" />
-              <span>Hỏi Trí Minh AI</span>
-            </button>
-
-            <button
               onClick={onOpenConsultModal}
               className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-md shadow-orange-600/30 hover:shadow-orange-600/50 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer"
             >
@@ -175,16 +165,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal, onOpenChatbo
               </a>
             ))}
             <div className="pt-2 flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenChatbot();
-                }}
-                className="w-full py-2.5 px-4 text-xs font-semibold rounded-lg text-blue-100 bg-blue-900 border border-blue-700 flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-4 h-4 text-orange-400" />
-                Hỏi Trợ Lý Tuyển Sinh AI Trí Minh
-              </button>
               <a
                 href={`tel:${CENTER_INFO.hotline.replace(/\s+/g, '')}`}
                 className="w-full py-2.5 px-4 text-xs font-bold rounded-lg text-white bg-slate-800 border border-slate-700 flex items-center justify-center gap-2"

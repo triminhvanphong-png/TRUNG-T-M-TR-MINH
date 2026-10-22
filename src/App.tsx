@@ -19,10 +19,8 @@ import { LearningEnvironmentSection } from './components/LearningEnvironmentSect
 import { ConsultationFormSection } from './components/ConsultationFormSection';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
-import { ChatbotModal } from './components/ChatbotModal';
 
 export default function App() {
-  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [selectedCourseForForm, setSelectedCourseForForm] = useState<string>('');
   const [selectedClassTypeForForm, setSelectedClassTypeForForm] = useState<string>('Chưa rõ – cần tư vấn');
 
@@ -46,10 +44,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col selection:bg-orange-500 selection:text-white">
       {/* 1. Menu cố định (Navbar) */}
-      <Navbar
-        onOpenConsultModal={scrollToConsultationForm}
-        onOpenChatbot={() => setIsChatbotOpen(true)}
-      />
+      <Navbar onOpenConsultModal={scrollToConsultationForm} />
 
       <main className="flex-1">
         {/* 2. Banner chính */}
@@ -95,21 +90,8 @@ export default function App() {
       {/* 12. Chân trang (Footer + Google Maps) */}
       <Footer />
 
-      {/* 13. Nút nổi góc phải (Zalo, Hotline, Messenger, Chatbot) */}
-      <FloatingActions
-        onOpenChatbot={() => setIsChatbotOpen(true)}
-        onOpenConsultForm={scrollToConsultationForm}
-      />
-
-      {/* 14. Chatbot tư vấn dùng Gemini */}
-      <ChatbotModal
-        isOpen={isChatbotOpen}
-        onClose={() => setIsChatbotOpen(false)}
-        onOpenConsultForm={() => {
-          setIsChatbotOpen(false);
-          scrollToConsultationForm();
-        }}
-      />
+      {/* 13. Nút nổi góc phải (Zalo, Hotline, Messenger) */}
+      <FloatingActions onOpenConsultForm={scrollToConsultationForm} />
     </div>
   );
 }
