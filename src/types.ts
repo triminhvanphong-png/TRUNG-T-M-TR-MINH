@@ -39,3 +39,25 @@ export interface ConsultationFormData {
   classType: string;
   notes: string;
 }
+
+export interface SuKienItem {
+  id: string;
+  tieuDe: string;
+  anh: string;
+  ngay: string;
+  gio: string;
+  diaChi: string;
+  noiDung: {
+    tieuDeBaiViet: string;
+    doanVanDau: string;
+    ngay: string;
+    gio: string;
+    diaChi: string;
+    moTaDe: string;
+    coHoi: string[];
+    huongDanDangKy: string;
+    xacNhanSuatThi: string;
+    ghiChuNho: string;
+  };
+  hetHan: string; // ISO 8601 string or date string (e.g. '2026-11-14T20:00:00+07:00')
+}

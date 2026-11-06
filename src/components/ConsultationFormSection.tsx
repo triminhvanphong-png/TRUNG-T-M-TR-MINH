@@ -268,12 +268,15 @@ export const ConsultationFormSection: React.FC<ConsultationFormSectionProps> = (
                     onChange={(e) => setFormData({ ...formData, khoaHoc: e.target.value })}
                     className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm bg-slate-50/50"
                   >
+                    {/* Lựa chọn thi thử tự ẩn sau 20h00 ngày 14/11/2026 */}
+                    {new Date() < new Date('2026-11-14T20:00:00+07:00') && (
+                      <option value="Thi thử ĐGNL 14/11/2026">Thi thử ĐGNL 14/11/2026 (Miễn phí)</option>
+                    )}
                     <option value="Lớp 12 Luyện Thi Đại Học (LTĐH)">Lớp 12 Luyện Thi Đại Học (LTĐH)</option>
                     <option value="Ôn Thi Đánh Giá Năng Lực (ĐGNL) ĐHQG TP.HCM">Ôn Thi ĐGNL ĐHQG TP.HCM</option>
                     <option value="Ôn Thi Tuyển Sinh 9 Lên 10">Ôn Thi Tuyển Sinh 9 Lên 10</option>
                     <option value="Lớp 11 (Chương Trình GDPT 2018, Hướng ĐGNL)">Lớp 11 (GDPT 2018)</option>
                     <option value="Lớp 10 (Chương Trình GDPT 2018, Hướng ĐGNL)">Lớp 10 (GDPT 2018)</option>
-                    <option value="Kỳ Thi Thử ĐGNL 2027">Kỳ Thi Thử ĐGNL 2027</option>
                   </select>
                 </div>
               </div>

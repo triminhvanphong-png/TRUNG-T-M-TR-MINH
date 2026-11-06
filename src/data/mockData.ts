@@ -1,4 +1,4 @@
-import { Course, Teacher, NewsArticle } from '../types';
+import { Course, Teacher, NewsArticle, SuKienItem } from '../types';
 import { IMAGES } from '../constants/images';
 
 export const CENTER_INFO = {
@@ -290,3 +290,32 @@ export const CLASS_COMPARISON = {
     ],
   },
 };
+
+// Dữ liệu sự kiện Trí Minh (sự kiện mới nhất hiển thị trước)
+export const DANH_SACH_SU_KIEN: SuKienItem[] = [
+  {
+    id: 'thi-thu-dgnl-2027-1411',
+    tieuDe: 'Thi thử ĐGNL ĐHQG TP.HCM 2027 – Hoàn toàn miễn phí',
+    anh: IMAGES.thiThuDgnl2027,
+    ngay: 'Thứ Bảy, 14/11/2026',
+    gio: '17h30 – 20h00 (có mặt lúc 17h00)',
+    diaChi: '434 Tô Ký, ấp 5, Đông Thạnh, TP.HCM',
+    noiDung: {
+      tieuDeBaiViet: '2K9, BẠN ĐÃ THỬ SỨC VỚI ĐỀ ĐGNL 120 CÂU TRONG 150 PHÚT CHƯA?',
+      doanVanDau: 'Ngày 14/11 này, Trung tâm LTĐH Trí Minh tổ chức buổi THI THỬ ĐGNL ĐHQG TP.HCM 2027 – HOÀN TOÀN MIỄN PHÍ, dành cho học sinh lớp 12 đang chuẩn bị cho kỳ thi năm tới.',
+      ngay: 'Thứ Bảy, 14/11/2026',
+      gio: '17h30 – 20h00 (có mặt lúc 17h00)',
+      diaChi: '434 Tô Ký, ấp 5, Đông Thạnh, TP.HCM',
+      moTaDe: 'Bài thi gồm 120 câu trắc nghiệm, đầy đủ 3 phần theo cấu trúc ĐGNL.',
+      coHoi: [
+        'Làm quen với thời gian và cách thức làm bài.',
+        'Nhận kết quả, phiếu phân tích năng lực.',
+        'Biết mình đang mạnh phần nào, cần cải thiện phần nào.',
+      ],
+      huongDanDangKy: 'Quý Phụ huynh hoặc các bạn học sinh muốn đăng ký chỉ cần nhắn Zalo 0703 672 542 với nội dung "THI THỬ ĐGNL".',
+      xacNhanSuatThi: 'Trung tâm sẽ hỗ trợ ghi danh và xác nhận suất thi.',
+      ghiChuNho: 'Buổi thi thử do Trung tâm Trí Minh tổ chức, không phải kỳ thi chính thức của ĐHQG TP.HCM.',
+    },
+    hetHan: '2026-11-14T20:00:00+07:00', // 20h00 ngày 14/11/2026 giờ VN (UTC+7)
+  },
+];

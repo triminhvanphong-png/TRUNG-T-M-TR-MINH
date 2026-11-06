@@ -10,6 +10,7 @@ export const IMAGES = {
   lop10: `${BASE}lop-10.jpg`,
   lop11: `${BASE}lop-11.jpg`,
   logo: `${BASE}logo.png`,
+  thiThuDgnl2027: `https://cdn.jsdelivr.net/gh/triminhvanphong-png/triminh-anh@main/thi-thu-dgnl-2027.webp`,
 } as const;
 
 // Khi ảnh không tải được: hiển thị nền màu xanh navy, KHÔNG thay bằng ảnh khác

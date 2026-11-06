@@ -10,6 +10,11 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(() => {
+    // Tự ẩn sau 20h00 ngày 14/11/2026 (giờ Việt Nam, UTC+7)
+    const expirationDate = new Date('2026-11-14T20:00:00+07:00');
+    return new Date() < expirationDate;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +28,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal }) => {
     { label: 'Trang chủ', href: '#home' },
     { label: 'Giới thiệu', href: '#about' },
     { label: 'Khóa học', href: '#courses' },
+    { label: 'Tin tức & Sự kiện', href: '#tin-tuc-su-kien' },
     { label: 'Bảng vàng', href: '#bang-vang' },
     { label: 'Lớp Chuẩn & Cấp Tốc', href: '#class-types' },
     { label: 'Ban giảng huấn', href: '#teachers' },
     { label: 'Học phí & Ưu đãi', href: '#tuition-schedule' },
-    { label: 'Tin tức', href: '#news' },
     { label: 'Không gian học', href: '#khong-gian-hoc-tap' },
     { label: 'Liên hệ', href: '#contact' },
   ];
@@ -41,9 +46,43 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultModal }) => {
     }
   };
 
+  const handleScrollToEvent = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.querySelector('#tin-tuc-su-kien');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Notification Bar */}
+      {/* 1. THANH THÔNG BÁO trên cùng trang (nền đỏ cam, chữ trắng) */}
+      {bannerVisible && (
+        <div className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 text-white py-2 px-3 sm:px-4 shadow-md text-xs sm:text-sm font-semibold relative z-20 animate-fadeIn">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+            <div className="flex-1 flex items-center justify-center sm:justify-start gap-2 flex-wrap text-center sm:text-left">
+              <span className="text-white drop-shadow-sm">
+                🎯 <strong>THI THỬ ĐGNL 2027 MIỄN PHÍ</strong> – Thứ Bảy 14/11/2026 – 17h30
+              </span>
+              <button
+                onClick={handleScrollToEvent}
+                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-black bg-white text-orange-600 hover:bg-orange-50 hover:scale-105 active:scale-95 transition-all shadow cursor-pointer shrink-0"
+              >
+                Đăng ký ngay
+              </button>
+            </div>
+            <button
+              onClick={() => setBannerVisible(false)}
+              className="p-1 rounded-full text-white/80 hover:text-white hover:bg-black/20 transition cursor-pointer shrink-0"
+              aria-label="Đóng thông báo"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Top Contact Bar */}
       <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-4 flex-wrap">

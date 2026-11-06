@@ -9,6 +9,7 @@ import { HeroBanner } from './components/HeroBanner';
 import { StatsSection } from './components/StatsSection';
 import { AboutSection } from './components/AboutSection';
 import { CoursesSection } from './components/CoursesSection';
+import { NewsAndEventsSection } from './components/NewsAndEventsSection';
 import { GoldenBoardSection } from './components/GoldenBoardSection';
 import { ClassComparisonSection } from './components/ClassComparisonSection';
 import { SpecialEventSection } from './components/SpecialEventSection';
@@ -59,7 +60,10 @@ export default function App() {
         {/* 5. Khóa học (Dạng thẻ, mỗi thẻ có popup chi tiết) */}
         <CoursesSection onOpenConsultFormWithCourse={handleSelectCourse} />
 
-        {/* 5.1 BẢNG VÀNG 2026 – HỌC VIÊN ĐẬU ĐẠI HỌC */}
+        {/* 5.1 TIN TỨC & SỰ KIỆN: Thi thử ĐGNL 2027 (Đặt ngay sau mục Khóa học) */}
+        <NewsAndEventsSection />
+
+        {/* 5.2 BẢNG VÀNG 2026 – HỌC VIÊN ĐẬU ĐẠI HỌC */}
         <GoldenBoardSection onOpenConsultForm={scrollToConsultationForm} />
 
         {/* 6. Hai hệ lớp (So sánh 2 cột) */}
